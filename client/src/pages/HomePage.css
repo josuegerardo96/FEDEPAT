@@ -1,0 +1,208 @@
+
+/* This is the left-half of the screen where are the buttons and the textfields */
+.Main-Login{ 
+    /* Align in the center as a column */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the items horizontally */
+
+    /* Put all the stuff in the right-center left part of the screen */
+    position: fixed;
+    top: 0; 
+    right: 50%;
+    width: 50%;
+    height: 100%;
+
+    background-color: #FFFFFF;
+    justify-content: center; /* Center the items horizontally */
+    
+}
+
+
+
+/* iniciar sesion */
+.Title{
+    font-size: x-large;
+    color: #02174A;
+    font-style: italic;
+    font-weight: bold;
+    width: 100%;
+    padding-left: 15%;
+    margin-bottom: 10%;
+    
+}
+
+
+/* Email Contrasena */
+.Sub-Title{
+    color: #02174A;
+    text-align: left;
+    font-weight: bold;
+    font-size: small;
+    width: 50%;
+    /* padding-left: 1cm; */
+    padding-top: 2%;
+    padding-bottom: 1%;
+
+}
+
+
+/* All the textfields in the screen */
+.TextField{
+    border-style: solid;
+    border-radius: 6px;
+    border-width: 2px;
+    border-color: #B4B6BA;
+    width: 50%;    
+    height: 40px;
+    padding-left:10px;
+    /* Text apart */
+    color: #02174A;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+
+/* How the texfields are gonna be looked when they are focus */
+input:focus{
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 2px;
+    border-color: #02174A;
+
+}
+
+
+/* The hint text inside the textfields when this is empty */
+::placeholder{
+    color: #858585;
+    font-size: smaller;
+    font-style: italic;
+}
+
+
+
+/* Englobe the checkbox and the label */
+.Checkbox-Admin{
+    display: flex;
+    width: 50%;
+    margin-top: 4%;
+    margin-left: 2%;
+    align-items: center;
+}
+
+
+/* Soy administrador */
+.Checkbox-Label{
+    color: #02174A;
+    text-align: left;
+    font-size: 12px;
+    width: 50%;
+    /* padding-left: 1cm; */
+    margin-left: 2%;
+
+}
+
+
+/* When the checkbox is not checked */
+.CheckBox{
+    width: 15px;
+    height: 15px;
+    color: #858585;
+    border-color: #858585;
+    background-color: #858585;
+}
+
+
+.CheckBox:checked{
+    width: 15px;
+    height: 15px;
+    color: #4876A6;
+    border-color: #4876A6;
+}
+
+
+
+
+
+/* This is all the design of the login button and its text */
+.Button-Login{
+    margin-top: 5%;
+    background-color: #4876A6;
+    color: white;
+    font-weight: bold;
+    font-size: small;
+    border-radius: 3px;
+    border-width: 0px;
+    width: 50%;
+    height: 40px;
+}
+
+
+
+
+
+/* This is the register space */
+
+.Register{
+    display: flex;
+    width: 50%;
+    margin-top: 4%;
+    margin-left: 2%;
+    justify-content: center;
+}
+
+.Register-Invitation{
+    font-family: 'Roboto', Arial;
+    color: #858585;
+    font-size: small;
+
+}
+
+
+.Register-Button{
+    font-family: 'Roboto', Arial;
+    color: #4876A6;
+    background-color: #FFFFFF;
+    border-width: 0;
+    font-size: small;
+    font-weight: bold;
+    margin-left: 2%;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+/* This is the right-half of the screen where is the logo and the legend of FEDEPAT  */
+.Main-Container {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    background-color: #F3F5F9;
+    justify-content: center;
+    align-items: center;
+}
+
+.Main-Img{
+    height: 35%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20%;
+
+}
+
+.Logo-Text{
+    text-align: center;
+    font-style: italic;
+    color: #02174A;
+    font-size: 1em;
+}
