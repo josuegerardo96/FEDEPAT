@@ -32,6 +32,9 @@ export default function HomePage(){
         <div>
 
             <div>
+
+                {/* If the user is register then it shows the next and 
+                if it is not, then it shows what is inside here */}
                 {!user && (
                     <>
                     
@@ -39,17 +42,17 @@ export default function HomePage(){
                     
                     {/* this is the the space for buttons and textfields */}
 
-                    <form onSubmit={handleSubmit} className='Main-Login'>
+                    <form onSubmit={handleSubmit} className='Main-Login-Home'>
 
 
                         {/* Title of the screen */}
-                        <h3 className='Title'>Iniciar sesion</h3>
+                        <h3 className='Title-Home'>Iniciar sesion</h3>
                         
                     
                         {/* Write the email field */}
-                        <label className='Sub-Title'>Email</label>
+                        <label className='Sub-Title-Home'>Email</label>
                         <input
-                            className='TextField'
+                            className='TextField-Home'
                             type = "email"
                             placeholder='Escribe tu correo'
                             onChange={(e) => setEmail(e.target.value)}
@@ -58,9 +61,9 @@ export default function HomePage(){
                         
 
                         {/* Write the password field */}
-                        <label className='Sub-Title'>Contraseña</label>
+                        <label className='Sub-Title-Home'>Contraseña</label>
                         <input
-                            className='TextField'
+                            className='TextField-Home'
                             type = "password"
                             placeholder='Escribe tu contraseña'
                             onChange={(e) => setPassword(e.target.value)}
@@ -69,41 +72,36 @@ export default function HomePage(){
 
 
                         {/* Are you an admin? CHECKBOX */}
-                        <div className='Checkbox-Admin'>
+                        <div className='Checkbox-Admin-Home'>
                             <input 
                                 type="checkbox" 
                                 className='CheckBox'
                             />
-                            <label className='Checkbox-Label'>Soy administrador</label>
+                            <label className='Checkbox-Label-Home'>Soy administrador</label>
                         </div>
 
 
 
                         {/* Button for login */}
-                        <button disabled = { isLoading } className="Button-Login">Iniciar sesión</button>
+                        <button disabled = { isLoading } className="Button-Login-Home">Iniciar sesión</button>
                         {error && <div className="error"> {error} </div>}
 
 
 
                         {/* Button and text for sign up */}
-                        <div className='Register'>
-                            <label className='Register-Invitation'>¿No tienes una cuenta?</label>
-                            <Link as={Link} to={routes.register} className="Register-Button" >Crear una cuenta</Link>
+                        <div className='Register-Home'>
+                            <label className='Register-Invitation-Home'>¿No tienes una cuenta?</label>
+                            <Link as={Link} to={routes.register} className="Register-Button-Home" >Crear una cuenta</Link>
                         </div>
 
 
                     </form>
 
 
-
-
-
-
-
                     {/* Logo and image in the left of the screen */}
-                    <div className="Main-Container">
-                        <img className="Main-Img" src={fedepat} alt="Fedepat"/>
-                        <p className='Logo-Text'>Federación costarricense de <br/> Patinaje y Deportes afines</p>
+                    <div className="Main-Container-Home">
+                        <img className="Main-Img-Home" src={fedepat} alt="Fedepat"/>
+                        <p className='Logo-Text-Home'>Federación costarricense de <br/> Patinaje y Deportes afines</p>
                     </div>
 
 
@@ -135,18 +133,12 @@ export default function HomePage(){
 
             </div>
 
-            {/* <Col> */}
                 <img 
                     className="img-fluid"
                     src = "/img/task-manager.svg"
                     alt = "gestor-de-tareas"
                 />
                 <p> Disfruta  del deporte</p>
-            {/* </Col> */}
-
-
-
-
             
 
         </div>

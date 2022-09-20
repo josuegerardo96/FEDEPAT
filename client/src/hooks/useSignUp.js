@@ -6,7 +6,7 @@ export const useSignup = () => {
     const [isLoading,setIsLoading] = useState(null)
     const { dispatch } = useAuth()
 
-    const signup = async (email,password,rol)  => {
+    const signup = async (email,password,rol,nombre,apellidos,telefono)  => {
 
         setIsLoading(true)
         setError(null)
@@ -14,7 +14,7 @@ export const useSignup = () => {
         const response = await fetch('/api/user/signup',{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({email, password,rol})
+            body: JSON.stringify({email, password, rol, nombre, apellidos, telefono})
         })
         const json = await response.json()
 
@@ -35,5 +35,5 @@ export const useSignup = () => {
 
     }
 
-    return { signup,isLoading,error }
+    return { signup,isLoading, error }
 }

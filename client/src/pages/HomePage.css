@@ -1,6 +1,6 @@
 
 /* This is the left-half of the screen where are the buttons and the textfields */
-.Main-Login{ 
+.Main-Login-Home{ 
     /* Align in the center as a column */
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@
 
 
 /* iniciar sesion */
-.Title{
+.Title-Home{
     font-size: x-large;
     color: #02174A;
     font-style: italic;
@@ -34,7 +34,7 @@
 
 
 /* Email Contrasena */
-.Sub-Title{
+.Sub-Title-Home{
     color: #02174A;
     text-align: left;
     font-weight: bold;
@@ -48,7 +48,7 @@
 
 
 /* All the textfields in the screen */
-.TextField{
+.TextField-Home{
     border-style: solid;
     border-radius: 6px;
     border-width: 2px;
@@ -83,7 +83,7 @@ input:focus{
 
 
 /* Englobe the checkbox and the label */
-.Checkbox-Admin{
+.Checkbox-Admin-Home{
     display: flex;
     width: 50%;
     margin-top: 4%;
@@ -93,7 +93,7 @@ input:focus{
 
 
 /* Soy administrador */
-.Checkbox-Label{
+.Checkbox-Label-Home{
     color: #02174A;
     text-align: left;
     font-size: 12px;
@@ -105,7 +105,7 @@ input:focus{
 
 
 /* When the checkbox is not checked */
-.CheckBox{
+.CheckBox-Home{
     width: 15px;
     height: 15px;
     color: #858585;
@@ -114,7 +114,7 @@ input:focus{
 }
 
 
-.CheckBox:checked{
+.CheckBox-Home:checked{
     width: 15px;
     height: 15px;
     color: #4876A6;
@@ -126,7 +126,7 @@ input:focus{
 
 
 /* This is all the design of the login button and its text */
-.Button-Login{
+.Button-Login-Home{
     margin-top: 5%;
     background-color: #4876A6;
     color: white;
@@ -144,7 +144,7 @@ input:focus{
 
 /* This is the register space */
 
-.Register{
+.Register-Home{
     display: flex;
     width: 50%;
     margin-top: 4%;
@@ -152,7 +152,7 @@ input:focus{
     justify-content: center;
 }
 
-.Register-Invitation{
+.Register-Invitation-Home{
     font-family: 'Roboto', Arial;
     color: #858585;
     font-size: small;
@@ -160,7 +160,7 @@ input:focus{
 }
 
 
-.Register-Button{
+.Register-Button-Home{
     font-family: 'Roboto', Arial;
     color: #4876A6;
     background-color: #FFFFFF;
@@ -180,7 +180,7 @@ input:focus{
 
 
 /* This is the right-half of the screen where is the logo and the legend of FEDEPAT  */
-.Main-Container {
+.Main-Container-Home{
     position: fixed;
     top: 0;
     left: 50%;
@@ -191,7 +191,7 @@ input:focus{
     align-items: center;
 }
 
-.Main-Img{
+.Main-Img-Home{
     height: 35%;
     display: block;
     margin-left: auto;
@@ -200,7 +200,7 @@ input:focus{
 
 }
 
-.Logo-Text{
+.Logo-Text-Home{
     text-align: center;
     font-style: italic;
     color: #02174A;
