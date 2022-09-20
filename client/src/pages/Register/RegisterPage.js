@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useSignup } from "../hooks/useSignUp";
-import roles from "../helpers/roles";
-import fedepat from '../images/Fedepat_bg.png';
+import { useSignup } from "../../hooks/useSignUp";
+import roles from "../../helpers/roles";
+import fedepat from '../../images/Fedepat_bg.png';
 import './RegisterPage.css';
 
 const Signup = () => {

@@ -1,6 +1,6 @@
 import {Container, Row ,Col} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
-import routes from '../helpers/routes';
+import routes from '../../helpers/routes';
 
 export default function NotFoundPage(){
     return(

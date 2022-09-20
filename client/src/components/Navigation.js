@@ -4,6 +4,8 @@ import useAuth from '../auth/useAuth'
 import routes from '../helpers/routes'
 import { useLogOut } from '../hooks/useLogOut'
 import roles from '../helpers/roles';
+import './Navigation.css';
+import fedepat from '../images/Fedepat_bg.png';
 
 export default function Navigation(){
     const { logout }=useLogOut();
@@ -13,10 +15,17 @@ export default function Navigation(){
         logout()
     }
     return(
-        <Navbar collapseOnSelect expand='lg' variant='dark' bg='dark'>
-            <Navbar.Brand as={NavLink} to ={routes.home}>Gestor de tareas</Navbar.Brand>
+        <Navbar collapseOnSelect expand='lg'>
+
+            {/* Button in the navbar that leads you to the main users home */}
+            <Navbar.Brand as={NavLink} to ={routes.home} className="Navbar-Home">
+                Pantalla principal
+            </Navbar.Brand> 
+
+
             <Navbar.Toggle aria-controls="responsive-navbar-nav"/>  
             <Navbar.Collapse id="responsive-navbar-nav">
+                
                 <Nav className="me-auto">
                      
                     
@@ -28,21 +37,31 @@ export default function Navigation(){
                     </>
                     )}
                 </Nav>
+
+
                 <Nav >
                     
                     {!user && (<>
-
-                    <Nav.Link as={NavLink} to ={routes.login}>Iniciar sesion</Nav.Link>
-                    <Nav.Link as={NavLink} to ={routes.register}>Registrarse</Nav.Link>
+                        <Nav.Link as={NavLink} to ={routes.login}>Iniciar sesion</Nav.Link>
+                        <Nav.Link as={NavLink} to ={routes.register}>Registrarse</Nav.Link>
                     </>
                     )}
 
                     {user && (<> 
-                    <Navbar.Brand >{user.email}</Navbar.Brand>
-                    <Nav.Link as={NavLink} to ={routes.account}>Mi cuenta</Nav.Link>
-                    <Nav.Link as={NavLink} to ={routes.edituser}>editar</Nav.Link>
-                    <Nav.Link as={NavLink} to ={routes.projects}> Proyectos</Nav.Link> 
-                    <Nav.Link to ={routes.home} onClick={handleClick}>Cerrar Sesion</Nav.Link>
+                        <Navbar.Brand as={NavLink} to ={routes.home} className="Centrar">
+                            {/* <img className="Icono-Fedepat" src={fedepat} alt="Fedepat"/> */}
+                            <label className='Navbar-Hola'>Hola</label>
+                            <label className='Navbar-Hola-Nombre'>{user.name}!</label>
+                        </Navbar.Brand>
+
+                        <Nav.Link as={NavLink} to ={routes.account}>Mi cuenta</Nav.Link> 
+                        <Nav.Link as={NavLink} to ={routes.edituser}>
+                        <label className='Navbar-Texto'>Editar</label> 
+                        </Nav.Link>
+                        <Nav.Link as={NavLink} to ={routes.projects}> Proyectos</Nav.Link> 
+                        <Nav.Link to ={routes.home} onClick={handleClick}>
+                            <label className='Navbar-Texto'>Cerrar Sesion</label>
+                        </Nav.Link>
                     </>
                     )}
                 </Nav>

@@ -1,13 +1,13 @@
 // import {Container, Row ,Col,Button, Card} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
-import routes from '../helpers/routes';
-import useAuth from '../auth/useAuth'; 
+import routes from '../../helpers/routes';
+import useAuth from '../../auth/useAuth'; 
 import './HomePage.css';
-import fedepat from '../images/Fedepat_bg.png';
+import fedepat from '../../images/Fedepat_bg.png';
 
 // These are the libraries in the "LoginPage.js" file
 import { useState } from "react";
-import { useLogin } from "../hooks/useLogin"
+import { useLogin } from "../../hooks/useLogin"
 
 
 
@@ -37,8 +37,6 @@ export default function HomePage(){
                 if it is not, then it shows what is inside here */}
                 {!user && (
                     <>
-                    
-                    {console.log(user)}
                     
                     {/* this is the the space for buttons and textfields */}
 
@@ -98,7 +96,7 @@ export default function HomePage(){
                     </form>
 
 
-                    {/* Logo and image in the left of the screen */}
+{/* --------------------- Logo and image in the left of the screen ----------------------------------------- */}
                     <div className="Main-Container-Home">
                         <img className="Main-Img-Home" src={fedepat} alt="Fedepat"/>
                         <p className='Logo-Text-Home'>Federación costarricense de <br/> Patinaje y Deportes afines</p>
