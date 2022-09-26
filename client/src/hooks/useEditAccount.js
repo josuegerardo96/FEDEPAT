@@ -6,7 +6,7 @@ export const useEditAccount = () => {
     const [isLoading,setIsLoading] = useState(null)
     const { dispatch } = useAuth()
 
-    const edit = async (_id,email,password)  => {
+    const edit = async (_id,email,password,nombre, apellidos, telefono)  => {
 
         setIsLoading(true)
         setError(null)
@@ -14,7 +14,7 @@ export const useEditAccount = () => {
         const response = await fetch('/api/user/editUser',{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({_id,email, password})
+            body: JSON.stringify({_id,email, password,nombre, apellidos, telefono})
         })
         const json = await response.json()
 
@@ -25,6 +25,7 @@ export const useEditAccount = () => {
         }
         if(response.ok){
             //save the user to local storage
+            localStorage.removeItem('user')
             localStorage.setItem('user',JSON.stringify(json))
 
             // update the auth context

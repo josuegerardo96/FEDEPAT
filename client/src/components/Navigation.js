@@ -10,6 +10,7 @@ import fedepat from '../images/Fedepat_bg.png';
 export default function Navigation(){
     const { logout }=useLogOut();
     const { user } = useAuth()
+    console.log(user)
 
     const handleClick = () => {
         logout()
@@ -51,7 +52,7 @@ export default function Navigation(){
                         <Navbar.Brand as={NavLink} to ={routes.home} className="Centrar">
                             {/* <img className="Icono-Fedepat" src={fedepat} alt="Fedepat"/> */}
                             <label className='Navbar-Hola'>Hola</label>
-                            <label className='Navbar-Hola-Nombre'>{user.name}!</label>
+                            <label className='Navbar-Hola-Nombre'>{user.user.nombre} !</label>
                         </Navbar.Brand>
 
                         <Nav.Link as={NavLink} to ={routes.account}>Mi cuenta</Nav.Link> 

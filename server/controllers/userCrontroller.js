@@ -48,12 +48,12 @@ const singupUser = async(req,res) => {
 
 const editUser = async(req,res) => {
 
-    const {_id,email,password} =req.body
+    const {_id,email,password,nombre, apellidos, telefono} =req.body
 
     try{
-        const user = await User.edituser(_id,email,password)
+        const user = await User.edituser(_id,email,password,nombre, apellidos, telefono)
 
-        res.status(200).json({email,user})
+        res.status(200).json({email,user,nombre, apellidos, telefono})
     }catch(error){
         res.status(400).json({error:error.message})
     }

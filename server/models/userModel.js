@@ -41,8 +41,8 @@ const userSchema = new Schema({
 userSchema.statics.signup = async function(email, password, rol, nombre, apellidos, telefono) {
 
     //validation
-    if(!email || !password){
-        throw Error('All fields must be filled')
+    if(!email || !password || !nombre || !apellidos || !telefono){
+        throw Error('Todos los campos deben estar llenos')
     }
     if(!validator.isEmail(email)){
         throw Error('Email is not valid')
@@ -89,11 +89,12 @@ userSchema.statics.login = async function(email,password){
 
 //static edit method
 
-userSchema.statics.edituser = async function (_id,email,password){
+userSchema.statics.edituser = async function (_id,email,password,nombre, apellidos, telefono){
 
-    if(!email || !password){
-        throw Error('All fields must be filled')
+    if(!email || !password || !nombre || !apellidos || !telefono){
+        throw Error('Todos los campos deben estar llenos')
     }
+
     if(!validator.isEmail(email)){
         throw Error('Email is not valid')
     }
@@ -101,16 +102,16 @@ userSchema.statics.edituser = async function (_id,email,password){
         throw Error('Password not strong enough')
     }
     
-    const exists = await this.findOne({ email })
+    //const exists = await this.findOne({ email })
 
-    if(exists){
-        throw Error('Email already in use')
-    }
+    //if(exists){
+    //    throw Error('Email already in use')
+   // }
 
     const salt = await bcrypt.genSalt(10)
     const hash = await bcrypt.hash(password,salt)
     
-    const user = await this.findOneAndUpdate({_id},{email,password: hash})
+    const user = await this.findOneAndUpdate({_id},{email,password: hash,nombre,apellidos,telefono})
 
     return user
 

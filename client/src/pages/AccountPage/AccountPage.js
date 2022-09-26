@@ -32,7 +32,11 @@ export default function AccountPage(){
                 <Col className='mt-4'>
                     <Card style={{maxWidth: '360px' }} className="mx-auto">
                     <p className='text-center'><b>Correo: </b>{user.email}</p>
+                    <p className='text-center'><b>Nombre: </b>{user.user.nombre}</p>
+                    <p className='text-center'><b>Apellidos: </b>{user.user.apellidos}</p>
+                    <p className='text-center'><b>Telefono: </b>{user.user.telefono}</p>
                     <p className='text-center'><b>Rol: </b>{user.user.rol}</p>
+
 
                     </Card>
          
