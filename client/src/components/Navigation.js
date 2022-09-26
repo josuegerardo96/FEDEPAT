@@ -5,7 +5,7 @@ import routes from '../helpers/routes'
 import { useLogOut } from '../hooks/useLogOut'
 import roles from '../helpers/roles';
 import './Navigation.css';
-import fedepat from '../images/Fedepat_bg.png';
+//import fedepat from '../images/Fedepat_bg.png';
 
 export default function Navigation(){
     const { logout }=useLogOut();
@@ -52,7 +52,7 @@ export default function Navigation(){
                         <Navbar.Brand as={NavLink} to ={routes.home} className="Centrar">
                             {/* <img className="Icono-Fedepat" src={fedepat} alt="Fedepat"/> */}
                             <label className='Navbar-Hola'>Hola</label>
-                            <label className='Navbar-Hola-Nombre'>{user.user.nombre} !</label>
+                            <label className='Navbar-Hola-Nombre'>{user.user.nombre}!</label>
                         </Navbar.Brand>
 
                         <Nav.Link as={NavLink} to ={routes.account}>Mi cuenta</Nav.Link> 
