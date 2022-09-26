@@ -69,14 +69,14 @@ export default function HomePage(){
                         />
 
 
-                        {/* Are you an admin? CHECKBOX */}
+                        {/* Are you an admin? CHECKBOX
                         <div className='Checkbox-Admin-Home'>
                             <input 
                                 type="checkbox" 
                                 className='CheckBox'
                             />
                             <label className='Checkbox-Label-Home'>Soy administrador</label>
-                        </div>
+                        </div> */}
 
 
 
