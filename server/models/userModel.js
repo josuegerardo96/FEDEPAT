@@ -128,7 +128,9 @@ userSchema.statics.showall = async function (){
 
 userSchema.statics.deleteuser = async function (email){
     
-    const user = await this.findOneAndDelete({email})
+    this.findOneAndDelete({email})
+    const user = await this.findOne({ email })
+
     return user
 }
 

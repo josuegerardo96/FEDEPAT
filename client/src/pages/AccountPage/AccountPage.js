@@ -7,7 +7,7 @@ import DeleteModal from './components/DeleteModal';
 export default function AccountPage(){
     const {user} = useAuth();
     const [isOpenDeleteModal, setIsOpenDeleteModal] = useState(false);
-    const openDeleteModal = () => setIsOpenDeleteModal(true);
+    //const openDeleteModal = () => setIsOpenDeleteModal(true);
     const closeDeleteModal = () => setIsOpenDeleteModal(false);
 
     return(
@@ -32,9 +32,9 @@ export default function AccountPage(){
                 <Col className='mt-4'>
                     <Card style={{maxWidth: '360px' }} className="mx-auto">
                     <p className='text-center'><b>Correo: </b>{user.email}</p>
-                    <p className='text-center'><b>Nombre: </b>{user.user.nombre}</p>
-                    <p className='text-center'><b>Apellidos: </b>{user.user.apellidos}</p>
-                    <p className='text-center'><b>Telefono: </b>{user.user.telefono}</p>
+                    <p className='text-center'><b>Nombre: </b>{user.nombre}</p>
+                    <p className='text-center'><b>Apellidos: </b>{user.apellidos}</p>
+                    <p className='text-center'><b>Telefono: </b>{user.telefono}</p>
                     <p className='text-center'><b>Rol: </b>{user.user.rol}</p>
 
 

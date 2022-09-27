@@ -1,10 +1,10 @@
 import {useState} from 'react'
-import useAuth from '../auth/useAuth'
+
 
 export const useEditAccount = () => {
     const [error, setError] = useState(null)
     const [isLoading,setIsLoading] = useState(null)
-    const { dispatch } = useAuth()
+    
 
     const edit = async (_id,email,password,nombre, apellidos, telefono)  => {
 
@@ -25,9 +25,7 @@ export const useEditAccount = () => {
         }
         if(response.ok){
             //save the user to local storage
-            localStorage.removeItem('user')
             localStorage.setItem('user',JSON.stringify(json))
-
             // update the auth context
             //dispatch({type: 'LOGIN',payload:json})
             window.location.replace("/")
