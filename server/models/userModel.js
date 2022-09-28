@@ -33,12 +33,16 @@ const userSchema = new Schema({
         type:String,
         requiere:true,
 
+    },
+    estado:{
+        type:Boolean,
+        requiere:true
     }
 })
 
 // static signup method
 
-userSchema.statics.signup = async function(email, password, rol, nombre, apellidos, telefono) {
+userSchema.statics.signup = async function(email, password, rol, nombre, apellidos, telefono,estado) {
 
     //validation
     if(!email || !password || !nombre || !apellidos || !telefono){
@@ -60,7 +64,7 @@ userSchema.statics.signup = async function(email, password, rol, nombre, apellid
     const salt = await bcrypt.genSalt(10)
     const hash = await bcrypt.hash(password,salt)
 
-    const user = await this.create({email, password: hash, rol, nombre, apellidos, telefono})
+    const user = await this.create({email, password: hash, rol, nombre, apellidos, telefono,estado})
 
     return user
 
@@ -73,16 +77,24 @@ userSchema.statics.login = async function(email,password){
     }
 
     const user = await this.findOne({ email })
+    
 
     if(!user){
         throw Error('Incorrect email')
     }
+
 
     const match = await bcrypt.compare(password,user.password)
 
     if(!match){
         throw Error ('Incorrect password')
     }
+
+    if(!user.estado){
+        throw Error('No a sido acceptado aun, Intente mas tarde')
+    }
+
+  
 
     return user
 }
@@ -128,10 +140,23 @@ userSchema.statics.showall = async function (){
 
 userSchema.statics.deleteuser = async function (email){
     
-    this.findOneAndDelete({email})
-    const user = await this.findOne({ email })
+    const user = await this.findOneAndDelete({email})
+    return user
+}
+
+userSchema.statics.acceptuser = async function (email){
+
+    
+    //const exists = await this.findOne({ email })
+
+    //if(exists){
+    //    throw Error('Email already in use')
+   // }
+    
+    const user = await this.findOneAndUpdate({email},{estado: true})
 
     return user
+
 }
 
 

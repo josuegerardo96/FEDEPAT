@@ -10,6 +10,7 @@ const routes={
     admin:{
         users:'/admin/users',
         registerAdmin:'/admin/registeradmin',
+        acceptusers:'/admin/acceptusers'
     }
 }
 export default routes;

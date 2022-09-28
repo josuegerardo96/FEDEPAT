@@ -22,7 +22,7 @@ const Signup = () => {
     const handleSubmit = async(e) =>{
 
         e.preventDefault()
-        await signup(email, password, roles.delegado, nombre, apellidos, telefono)
+        await signup(email, password, roles.delegado, nombre, apellidos, telefono,false)
     }
 
     return (

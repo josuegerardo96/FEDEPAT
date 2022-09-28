@@ -31,9 +31,9 @@ const loginUser = async(req,res) => {
 //signup user
 
 const singupUser = async(req,res) => {
-    const {email, password, rol, nombre, apellidos, telefono} = req.body
+    const {email, password, rol, nombre, apellidos, telefono,estado} = req.body
     try {
-        const user = await User.signup(email,password,rol, nombre, apellidos, telefono)
+        const user = await User.signup(email,password,rol, nombre, apellidos, telefono,estado)
 
         // create  a token
         //const token = createToken(user._id)
@@ -93,4 +93,18 @@ const deleteUser = async(req,res) => {
 
 }
 
-module.exports= {loginUser,singupUser,editUser,showAll,deleteUser}
+//Aceptar user
+
+const acceptUser = async (req,res) => {
+    const {email} =req.body
+
+    try{
+        const user = await User.acceptuser(email)
+
+        res.status(200).json({email,user})
+    }catch(error){
+        res.status(400).json({error:error.message})
+    }
+}
+
+module.exports= {loginUser,singupUser,editUser,showAll,deleteUser,acceptUser}

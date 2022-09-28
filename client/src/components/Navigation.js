@@ -10,8 +10,6 @@ import './Navigation.css';
 export default function Navigation(){
     const { logout }=useLogOut();
     const { user } = useAuth()
-    console.log(user)
-
     const handleClick = () => {
         logout()
     }
@@ -32,8 +30,9 @@ export default function Navigation(){
                     
                     {user && user.user.rol === roles.admin && (<> 
                     <NavDropdown title = "Admin">
-                        <NavDropdown.Item as={NavLink} to ={routes.admin.users}>Usuarios</NavDropdown.Item>
                         <NavDropdown.Item as={NavLink} to ={routes.admin.registerAdmin}>Registro Administrador</NavDropdown.Item>
+                        <NavDropdown.Item as={NavLink} to ={routes.admin.users}>Usuarios</NavDropdown.Item>
+                        <NavDropdown.Item as={NavLink} to ={routes.admin.acceptusers}>Aceptar Usuarios</NavDropdown.Item>
                     </NavDropdown>
                     </>
                     )}

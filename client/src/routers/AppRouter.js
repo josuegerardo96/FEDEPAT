@@ -13,6 +13,7 @@ import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 import RegisterAdminPage from '../pages/admin/RegisterAdmin';
 import EditAccount from '../pages/AccountPage/EditAccount'
+import AcceptUserPage from '../pages/admin/AcceptUserPage'
 import useAuth from '../auth/useAuth'
 
 export default function AppRouter(){
@@ -36,6 +37,7 @@ export default function AppRouter(){
                     <Route element={<PrivateRoute hasRole={roles.admin} />}>
                         <Route  path={routes.admin.users} element={<UsersPage/>}></Route>
                         <Route  path={routes.admin.registerAdmin} element={<RegisterAdminPage/>}></Route>
+                        <Route  path={routes.admin.acceptusers} element={<AcceptUserPage/>}></Route>
                     </Route>
                     </>
                     )}
