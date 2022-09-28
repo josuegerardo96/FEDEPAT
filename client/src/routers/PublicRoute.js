@@ -7,7 +7,7 @@ const PublicRoute = () => {
         let auth=useAuth();
         console.log({auth}) //para analizar que trae, el .user es porque asi devuelve la funcion
         return(
-            !auth.user ? <Outlet/> : <Navigate to={routes.projects}/>
+            !auth.user ? <Outlet/> : <Navigate to={routes.home}/>
         )
         
     }

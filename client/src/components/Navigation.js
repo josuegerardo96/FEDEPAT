@@ -12,6 +12,7 @@ import { useState } from 'react'
 export default function Navigation(){
     const { logout }=useLogOut();
     const { user } = useAuth()
+<<<<<<< HEAD
     console.log(user)
     const [paginaSel, setPaginaSel] = useState('principal');
 
@@ -22,6 +23,8 @@ export default function Navigation(){
 
 
 
+=======
+>>>>>>> 76e749cc296d07d41928a05f5835fe75ae6ab264
     const handleClick = () => {
         logout()
     }
@@ -45,8 +48,9 @@ export default function Navigation(){
                 {/* <Nav className="">
                     {user && user.user.rol === roles.admin && (<> 
                     <NavDropdown title = "Admin">
-                        <NavDropdown.Item as={NavLink} to ={routes.admin.users}>Usuarios</NavDropdown.Item>
                         <NavDropdown.Item as={NavLink} to ={routes.admin.registerAdmin}>Registro Administrador</NavDropdown.Item>
+                        <NavDropdown.Item as={NavLink} to ={routes.admin.users}>Usuarios</NavDropdown.Item>
+                        <NavDropdown.Item as={NavLink} to ={routes.admin.acceptusers}>Aceptar Usuarios</NavDropdown.Item>
                     </NavDropdown>
                     </>
                     )}

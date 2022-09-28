@@ -1,7 +1,7 @@
 const express = require('express')
 
 //controller function
-const {loginUser,singupUser,editUser,showAll,deleteUser} = require('../controllers/userCrontroller')
+const {loginUser,singupUser,editUser,showAll,deleteUser,acceptUser} = require('../controllers/userCrontroller')
 
 
 const router =express.Router()
@@ -22,5 +22,10 @@ router.get('/getusers',showAll)
 //delete user
 
 router.delete('/deleteuser',deleteUser)
+
+//Aceptar Delegados
+
+router.post('/acceptuser',acceptUser)
+
 
 module.exports = router

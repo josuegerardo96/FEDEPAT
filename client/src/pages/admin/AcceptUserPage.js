@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import UserDetails from '../../components/UserDetails'
+import UserAcceptance from '../../components/UserAcceptance'
 const  UsersPage = () => {
     const [users ,setUsers] = useState(null)
     useEffect(() => {
@@ -16,10 +16,11 @@ const  UsersPage = () => {
 
     return(
         <div>
+            <h1 align = "center">Delegados en lista de espera</h1>
             <div>
                 
                 {users && users.map((user) =>(
-                    <UserDetails key={user._id} user={user} />
+                    <UserAcceptance key={user._id} user={user} />
 
                 ))}
 

@@ -17,7 +17,7 @@ const SignupAdmin = () => {
     const handleSubmit = async(e) =>{
         e.preventDefault()
 
-        await signup(email, password,roles.admin,nombre,apellidos,telefono)
+        await signup(email, password,roles.admin,nombre,apellidos,telefono,true)
     }
 
     return (

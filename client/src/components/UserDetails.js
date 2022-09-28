@@ -1,10 +1,11 @@
 
 import {Container, Row ,Col,Card} from 'react-bootstrap'
 import { useDeleteUser } from "../hooks/useDeleteUser"
+import useAuth from '../auth/useAuth'
 
 const UserDetails = ({user}) =>{
     const { deleteuser , error, isLoading } = useDeleteUser()
-
+    const  auth  = useAuth();
     const handleSubmit = async(e) =>{
         e.preventDefault()
 
@@ -12,7 +13,9 @@ const UserDetails = ({user}) =>{
         
     }
     return (
+        
         <Container>
+            {auth.user.email !== user.email && user.estado && (
             <Row className='mt-4'>
             <Col xs={12} className="text-center"> 
             <form className="login" onSubmit={handleSubmit}>
@@ -27,6 +30,7 @@ const UserDetails = ({user}) =>{
             </form>
             </Col>
             </Row>
+            )}
         </Container>
 
     )
