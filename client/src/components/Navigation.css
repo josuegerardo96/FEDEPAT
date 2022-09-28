@@ -1,31 +1,90 @@
-.Navbar-Home{
-    margin-left: 5%;
+/* This take the full navbar and apply CSS to the full "rectangle" */
+.Navbar-completa{
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 100px;
+    /* background-color: aqua; */
+    text-align: center;
+    display: block;
+}
+
+/* This just applies changes in the FEDEPAT's logo */
+.Navbar-imagen-FEDEPAT{
+    height: 75px;
+}
+
+/* This just applies changes in the FEDEPAT's logo-text */
+.Navbar-texto-FEDEPAT{
+    margin-left: 15px;
+    vertical-align: middle; /* This center the object vertically */
+    font-size: small;
+    text-align: center;
     color: #02174A;
     font-weight: bold;
-    border-width: 0;
+    font-style: italic;
+    /* font-family: 'Lato', sans-serif; */
+}
+
+
+
+
+
+/* This is the right side of the navbar */
+
+.Navbar-partederecha{
+    /* background-color: blueviolet; */
+    position: absolute;
+    right: 0;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.Navbar-partederecha-textos{
+    color: #02174A;
+    font-size: medium;
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+}
+
+
+
+
+.Navbar-partederecha-opcionconcirculo{
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.Navbar-partederecha-botoncerrarsesion{
+    background-color: white;
+    border: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    width: 120px;
+    border-color: #02174A;
+}
+
+
+.Navbar-circulorojo{
+    height: 5px;
+    width: 5px;
+    border-radius: 5px;
+    background-color: red;
+}
+
+.Navbar-circuloblanco{
+    height: 5px;
+    width: 5px;
+    border-radius: 5px;
     background-color: white;
 }
 
-.Navbar-Hola{
-    color: #02174A;
-    font-size: 14px;
-    margin-right: 10px;
-    cursor: pointer;
-}
 
 
-
-.Navbar-Hola-Nombre{
-    color: #02174A;
-    font-size: 14px;
-    margin-right: 10%;
-    font-weight: bold;
-    cursor: pointer;
-
-}
-
-.Navbar-Texto{
-    color: #02174A;
-    font-size: 14px;
-    cursor: pointer;
-}

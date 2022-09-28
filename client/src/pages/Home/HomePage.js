@@ -135,6 +135,7 @@ export default function HomePage(){
                     className="img-fluid"
                     src = "/img/task-manager.svg"
                     alt = "gestor-de-tareas"
+                    style={{height: '30px'}}
                 />
                 <p> Disfruta  del deporte</p>
             
