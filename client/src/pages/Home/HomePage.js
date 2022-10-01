@@ -4,10 +4,15 @@ import routes from '../../helpers/routes';
 import useAuth from '../../auth/useAuth'; 
 import './HomePage.css';
 import fedepat from '../../images/Fedepat_bg.png';
-
-// These are the libraries in the "LoginPage.js" file
 import { useState } from "react";
+import roles from '../../helpers/roles';
 import { useLogin } from "../../hooks/useLogin"
+
+import { IoMdCreate } from "react-icons/io"
+import { FaUserCircle } from "react-icons/fa";
+import {GiTeamUpgrade} from "react-icons/gi"
+import {RiArrowRightSLine, RiCalendarTodoFill, RiAdminLine, RiMailDownloadFill, RiListOrdered, RiFilter3Line, RiTeamFill} from "react-icons/ri"
+
 
 
 
@@ -69,17 +74,6 @@ export default function HomePage(){
                         />
 
 
-                        {/* Are you an admin? CHECKBOX
-                        <div className='Checkbox-Admin-Home'>
-                            <input 
-                                type="checkbox" 
-                                className='CheckBox'
-                            />
-                            <label className='Checkbox-Label-Home'>Soy administrador</label>
-                        </div> */}
-
-
-
                         {/* Button for login */}
                         <button disabled = { isLoading } className="Button-Login-Home">Iniciar sesión</button>
                         {error && <div className="error"> {error} </div>}
@@ -103,42 +97,233 @@ export default function HomePage(){
                     </div>
 
 
-
-
-                        {/* <Div className='mt-5'>
-                        <Col md={{span: 6, offset:3 }} className="mb-5">
-                        <h2>Bienvenidos a asociacion deportiva</h2>
-                        <p>¡Aquí podrás gestionar registrar tus equipos!</p>
-                        <div>
-
-                        {!user && (<>
-                            <Col  className="mb-2" >
-                            <Button as={Link} to={routes.login}>Ingresa</Button>  
-                            </Col>
-                            
-                            <Col className="mb-2" >
-                            <Button as={Link} to={routes.register} className= "ml-1" >Crear una cuenta</Button>
-                            </Col>
-                            </>
-                        )} 
-
-                        </div>
-                        </Col>
-                        */}
-
                     </>
-                )} 
+                )}
+
+
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* ----------------------------------------------------------USER LOGGED IN ------------------------------------------------------------------------- */}
+                
+
+                {/* The user is a delegado */}
+                {user && user.user.rol === roles.delegado && (
+                    <>
+                        <div className='Principal-cuerpo'>
+                            
+                            {/* This is the card where the user can see its own information */}
+                            {/* Principal - cuerpo - cuadro de informacion (P-C-C) */}
+                            <div className='P-C-C'>
+                                <FaUserCircle size='100px' color='#367E18'/>
+                                <label className='P-C-C-textonombrecompleto'>{user.nombre}<br/>{user.apellidos}</label>
+                                <label className='P-C-C-textoemailtelefono'>{user.email}</label>
+                                <label className='P-C-C-textoemailtelefono' style={{fontSize:'12px'}}>+506 {user.telefono}</label>
+
+                            </div>
+
+                            {/* Separate the user info from the options */}
+                            <div style={{width:'100px'}}></div>
+
+
+                            {/* All the options the user has */}
+                            <div className='P-C-listaopciones'>
+
+                                {/* P-C-L: Principal - cuerpo - lista de opciones */}
+
+
+                                {/* Option 1: REGISTRAR EQUIPO */}
+                                <div className='P-C-L-cuadro'>
+                                        {/* Icon */}
+                                        <GiTeamUpgrade size='20px' color='#367E18'/>
+                                        {/* Texts */}
+                                        <div className='P-C-L-C-texto'>
+                                            <label className='P-C-L-C-textoprincipal'>Registrar un equipo</label>
+                                            <label className='P-C-L-C-textosecundario'>Podrá subscribir un grupo de personas al sistema para posteriormente hacerlos parte de un evento</label>
+                                        </div>
+                                        {/* Final icon */}
+                                        <RiArrowRightSLine size='20px' color='#02174A'/>
+                                </div>
+
+
+                                {/* Option 2 */}
+
+                                <div className='P-C-L-cuadro'>
+                                        {/* Icon */}
+                                        <RiCalendarTodoFill size='20px' color='#367E18'/>
+                                        {/* Texts */}
+                                        <div className='P-C-L-C-texto'>
+                                            <label className='P-C-L-C-textoprincipal'>Ver eventos disponibles</label>
+                                            <label className='P-C-L-C-textosecundario'>Vea los eventos que están disponibles y si ya tiene un equipo registrado podrá subscribirlo a un evento</label>
+                                        </div>
+                                        {/* Final icon */}
+                                        <RiArrowRightSLine size='20px' color='#02174A'/>
+                                </div>
+
+
+                                
+
+                            </div>
+                        </div>
+                    </>
+                )}
+
+
+
+
+
+
+
+
+                {/* The user is an admin */}
+                {user && user.user.rol === roles.admin && (
+                    <>
+                        <div className='Principal-cuerpo'>
+                            
+                            {/* This is the card where the user can see its own information */}
+                            {/* Principal - cuerpo - cuadro de informacion (P-C-C) */}
+                            <div className='P-C-C'>
+                                <FaUserCircle size='100px' color='#367E18'/>
+                                <label className='P-C-C-textonombrecompleto'>{user.nombre}<br/>{user.apellidos}</label>
+                                <label className='P-C-C-textoemailtelefono'>{user.email}</label>
+                                <label className='P-C-C-textoemailtelefono' style={{fontSize:'12px'}}>+506 {user.telefono}</label>
+                                <label className='P-C-C-textonombrecompleto' style={{marginTop:'50px', fontSize: '12px'}}>Eres un administrador</label>
+                            </div>
+
+                            {/* Separate the user info from the options */}
+                            <div style={{width:'50px'}}></div>
+
+
+                            {/* All the options the user has */}
+                            <div className='P-C-listaopciones'>
+
+                                {/* P-C-L: Principal - cuerpo - lista de opciones */}
+
+
+                                
+                                {/* REGISTRAR OTRO ADMINISTRADOR */}
+                                <Link to ={routes.admin.registerAdmin} style={{textDecoration: 'none'}} >
+                                    <div className='P-C-L-cuadro'>
+                                            <RiAdminLine size='20px' color='#367E18'/>
+                                            <div className='P-C-L-C-texto'>
+                                                <label className='P-C-L-C-textoprincipal'>Registrar otro administrador</label>
+                                                <label className='P-C-L-C-textosecundario'>Podrá registrar a otros administradores</label>
+                                            </div>
+                                            <RiArrowRightSLine size='20px' color='#02174A'/>
+                                    </div>
+                                </Link>
+                                
+
+
+                                {/* ACEPTAR DELEGADOS */}
+                                <Link to ={routes.admin.acceptusers} style={{textDecoration: 'none'}} >
+                                    <div className='P-C-L-cuadro'>
+                                            <RiMailDownloadFill size='20px' color='#367E18'/>
+                                            <div className='P-C-L-C-texto'>
+                                                <label className='P-C-L-C-textoprincipal'>Ver solicitudes de registro de delegados</label>
+                                                <label className='P-C-L-C-textosecundario'>Podrá ver todas las solicitudes de los delegados que desean registrarse en el sistema</label>
+                                            </div>
+                                            <RiArrowRightSLine size='20px' color='#02174A'/>
+                                    </div>
+                                </Link>
+
+
+
+                                {/* VER TODOS LOS USUARIOS DE LA PÁGINA */}
+                                <Link to ={routes.admin.users} style={{textDecoration: 'none'}} >
+                                    <div className='P-C-L-cuadro'>
+                                            <RiListOrdered size='20px' color='#367E18'/>
+                                            <div className='P-C-L-C-texto'>
+                                                <label className='P-C-L-C-textoprincipal'>Ver usuarios registrados en la página</label>
+                                                <label className='P-C-L-C-textosecundario'>Podrá ver una lista de todos los usuarios en el sistema, sean delegados o administradores</label>
+                                            </div>
+                                            <RiArrowRightSLine size='20px' color='#02174A'/>
+                                    </div>
+                                </Link>
+
+
+
+                                
+                                {/* Faltan de implementar estas opciones */}
+
+
+
+
+                                {/* <Link to ={routes.admin.registerAdmin} style={{textDecoration: 'none'}} > */}
+                                    <div className='P-C-L-cuadro'>
+                                            <RiFilter3Line size='20px' color='#367E18'/>
+                                            <div className='P-C-L-C-texto'>
+                                                <label className='P-C-L-C-textoprincipal'>Ver y filtrar usuarios</label>
+                                                <label className='P-C-L-C-textosecundario'>Podrá ver a todos los usuarios registrados y filtrarlos por diferentes categorías</label>
+                                            </div>
+                                            <RiArrowRightSLine size='20px' color='#02174A'/>
+                                    </div>
+                                {/* </Link> */}
+
+
+
+
+                                {/* <Link to ={routes.admin.registerAdmin} style={{textDecoration: 'none'}} > */}
+                                    <div className='P-C-L-cuadro'>
+                                            <IoMdCreate size='20px' color='#367E18'/>
+                                            <div className='P-C-L-C-texto'>
+                                                <label className='P-C-L-C-textoprincipal'>Crear evento</label>
+                                                <label className='P-C-L-C-textosecundario'>Cree eventos deportivos a los cuales los usuarios se podrán registrar</label>
+                                            </div>
+                                            <RiArrowRightSLine size='20px' color='#02174A'/>
+                                    </div>
+                                {/* </Link> */}
+
+
+
+
+                                {/* <Link to ={routes.admin.registerAdmin} style={{textDecoration: 'none'}} > */}
+                                    <div className='P-C-L-cuadro'>
+                                            <RiTeamFill size='20px' color='#367E18'/>
+                                            <div className='P-C-L-C-texto'>
+                                                <label className='P-C-L-C-textoprincipal'>Ver solicitudes de registro de equipos</label>
+                                                <label className='P-C-L-C-textosecundario'>Podrá aceptar o rechazar las solicitudes que hacen los delegados al querer registrar un equipo</label>
+                                            </div>
+                                            <RiArrowRightSLine size='20px' color='#02174A'/>
+                                    </div>
+                                {/* </Link> */}
+                                    
+
+
+
+                                
+
+                            </div>
+                        </div>
+                    </>
+                )}
+
+
+
+
+
+                
+                 
 
             </div>
-
-                <img 
-                    className="img-fluid"
-                    src = "/img/task-manager.svg"
-                    alt = "gestor-de-tareas"
-                    style={{height: '30px'}}
-                />
-                <p> Disfruta  del deporte</p>
-            
 
         </div>
 
