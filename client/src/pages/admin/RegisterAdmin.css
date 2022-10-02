@@ -1,0 +1,183 @@
+
+/* left-half of the screen where is the logo and the FEDEPAT's legend */
+
+/* screen half */
+.Registeradmin-Right {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    background-color: white;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ADMIN REGISTER image */
+.Main-Img{
+    height: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25%;
+}
+
+
+
+
+
+
+
+/* This is the left-half of the screen where are the buttons and the textfields */
+
+.Adminadd{ 
+    /* Align in the center as a column */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the items horizontally */
+    position: fixed;
+    top: 0%; 
+    left: 2%;
+    right: 50%;
+    width: 50%;
+    height: 100%;
+
+    background-color: #ffffff;
+    justify-content: center; /* Center the items horizontally */
+    
+}
+
+
+
+/* Registrarse como Delegado */
+.Adminadd-Title{
+    font-size: x-large;
+    color: #02174A;
+    font-style: italic;
+    font-weight: bold;
+    width: 100%;
+    padding-left: 20px;
+    margin-bottom: 5%;
+}
+
+
+/* Email Contrasena Nombre Apellidos Telefono */
+.Adminadd-Sub-Title{
+    color: #02174A;
+    text-align: left;
+    font-weight: bold;
+    font-size: small;
+    width: 60%;
+    padding-top: 2%;
+    padding-bottom: 1%;
+
+}
+
+/* Password label */
+.Adminadd-Sub-Title-Password{
+    color: #02174A;
+    text-align: left;
+    margin-left: 20%;
+    font-weight: bold;
+    font-size: small;
+    width: 60%;
+    padding-top: 2%;
+    padding-bottom: 1%;
+
+}
+
+
+/* nombre apellidos email telefono */
+.Adminadd-Input-Personal-Data{
+    border-style: solid;
+    border-radius: 6px;
+    border-width: 2px;
+    border-color: #B4B6BA;
+    width: 90%;    
+    height: 40px;
+    padding-left:10px;
+    /* Text apart */
+    color: #02174A;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* password */
+.Adminadd-Input-Personal-Password{
+    border-style: solid;
+    border-radius: 6px;
+    border-width: 2px;
+    border-color: #B4B6BA;
+    width: 40%;    
+    height: 40px;
+    padding-left:10px;
+    /* Text apart */
+    color: #02174A;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* How the texfields are gonna be looked when they are focus */
+input:focus{
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 2px;
+    border-color: #02174A;
+
+}
+
+
+/* The hint text inside the textfields when this is empty */
+::placeholder{
+    color: #858585;
+    font-size: smaller;
+    font-style: italic;
+}
+
+
+
+/* This is all the design of the sign up button and its text */
+.Adminadd-Button-Signup{
+    margin-top: 5%;
+    background-color: #4876A6;
+    color: white;
+    font-weight: bold;
+    font-size: small;
+    border-radius: 3px;
+    border-width: 0px;
+    width: 50%;
+    height: 40px;
+}
+
+
+
+/* Put an element next to other */
+
+.Adminadd-Line-Inputs{
+    display: flex;
+    width: 80%;
+}
+
+.Adminadd-Line-Inputs-Blocks{
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+    margin-top: 3%;
+}
+
+
+
+
+
+.Adminadd-icono-volver{
+    display: block;
+}
+
+.Adminadd-texto-volver{
+    margin-left: 10px;
+    font-size: 13px;
+    color: #858585;
+    margin-top: 20%;
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+}

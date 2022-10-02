@@ -1,7 +1,9 @@
 import { useEffect, useState, } from "react";
-import {Container, Row ,Col,Card} from 'react-bootstrap'
 import { useEditAccount } from "../../hooks/useEditAccount"
 import useAuth from "../../auth/useAuth";
+import edit_profile from '../../images/edit_profile.png';
+import './EditAccount.css';
+
 
 const EditAccount = () => {
     const  { user } = useAuth();
@@ -24,64 +26,115 @@ const EditAccount = () => {
 
     const handleSubmit = async(e) =>{
         e.preventDefault()
-
         await edit(user.user._id,email,password,nombre, apellidos, telefono)
-
     }
 
+
+
     return (
-        <Container>
-            <Row className='mt-4'>
-            <Col className='mt-4'> 
-        <form className="login" onSubmit={handleSubmit}>
-        <Card style={{maxWidth: '360px' }} className="mx-auto">
-            <h3>Editar</h3>
-            
-            <label>Cambiar Nombre</label>
-            <input
-                type = "text"
-                placeholder="Escriba su nombre"
-                onChange={(e) => setNombre(e.target.value)}
-                value = {nombre}
-            />
+        
+        <div className="Edit">
 
-            <label>Cambiar Apellidos</label>
-            <input
-                type = "text"
-                placeholder="Escriba sus apellidos"
-                onChange={(e) => setApellidos(e.target.value)}
-                value = {apellidos}
-             />
+            <form className="Edit-form" onSubmit={handleSubmit}>
 
-            <label>Cambiar Teléfono</label>
-            <input
-                type = "tel"
-                placeholder="Escriba un telefono"
-                onChange={(e) => setTelefono(e.target.value)}
-                value = {telefono}
+
+                {/* Put the elements next to other */}
+
+                <div className="Adminadd-Line-Inputs">
+
+                    {/* User's name */}
+                    <div className="Adminadd-Line-Inputs-Blocks">
+                        <label  className="Adminadd-Sub-Title">Nombre</label>
+                        <input
+                            className="Adminadd-Input-Personal-Data"
+                            type = "text"
+                            placeholder="Escriba su nombre"
+                            onChange={(e) => setNombre(e.target.value)}
+                            value = {nombre}
+                        />
+                    </div>
+                    
+
+
+                    {/* User's Last name */}
+                    <div className="Adminadd-Line-Inputs-Blocks">
+                        <label  className="Adminadd-Sub-Title">Apellidos</label>
+                        <input
+                            className="Adminadd-Input-Personal-Data"
+                            type = "text"
+                            placeholder="Escriba sus apellidos"
+                            onChange={(e) => setApellidos(e.target.value)}
+                            value = {apellidos}
+                        />
+                    </div>
+
+                </div>
+
+
+
+
+                {/* Put the elements next to each other */}
+                <div className="Adminadd-Line-Inputs">
+                    
+                    
+                
+                    {/* User's email */}                        
+                    <div className="Adminadd-Line-Inputs-Blocks">
+                        <label  className="Adminadd-Sub-Title">Email</label>
+                        <input
+                            className="Adminadd-Input-Personal-Data"
+                            type = "email"
+                            placeholder="Escriba su email"
+                            onChange={(e) => setEmail(e.target.value)}
+                            value = {email}
+                        />
+                    </div>
+
+
+                    {/* User's cellphone number */}
+                    <div className="Adminadd-Line-Inputs-Blocks">
+                        <label  className="Adminadd-Sub-Title">Teléfono</label>
+                        <input
+                            className="Adminadd-Input-Personal-Data"
+                            type = "text"
+                            placeholder="8888 88 88"
+                            onChange={(e) => setTelefono(e.target.value)}
+                            value = {telefono}
+                        />
+                    </div>
+
+                </div>
+
+                {/* User's password */}
+                <label  className="Adminadd-Sub-Title-Password">Contraseña</label>
+                <input
+                    className="Adminadd-Input-Personal-Password"
+                    type = "password"
+                    placeholder="Escriba su contraseña"
+                    onChange={(e) => setPassword(e.target.value)}
+                    value = {password}
                 />
 
-            <label>Cambiar Email</label>
-            <input
-                type = "email"
-                onChange={(e) => setEmail(e.target.value)}
-                value = {email}
-            />
-            
-            <label>Cambiar Contraseña o manter la misma</label>
-            <input
-                type = "password"
-                onChange={(e) => setPassword(e.target.value)}
-                value = {password}
-            />
+                
 
-            <button disabled = { isLoading } >Editar</button>
-            {error && <div className="error"> {error} </div>}
-            </Card>
-        </form>
-        </Col>
-        </Row>
-        </Container>
+                {/* Sign up button */}
+                <button 
+                    daisbled = {isLoading} 
+                    className="Adminadd-Button-Signup">
+                        Actualizar perfil
+                </button>
+                {error && <div  className= "error" >{error}</div>}
+                
+            </form>
+
+
+
+
+            <div className="Edit-Right">
+                <img className="Edit-Right-Img" src={edit_profile} alt="Imagen de admin"/>
+            </div>
+        
+        </div>
     )
 }
 
