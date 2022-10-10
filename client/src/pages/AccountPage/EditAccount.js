@@ -128,8 +128,6 @@ const EditAccount = () => {
             </form>
 
 
-
-
             <div className="Edit-Right">
                 <img className="Edit-Right-Img" src={edit_profile} alt="Imagen de admin"/>
             </div>

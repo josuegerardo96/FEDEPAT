@@ -1,0 +1,46 @@
+.Solicitudes-caja{
+    display: flex;
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 100%;
+    height: 70px;
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px #858585;
+    align-items: center;
+}
+
+.Solicitudes-caja-textonormal{
+    font-size: 15px;
+    color: #02174A;
+    width: 25%;
+    text-align: center;
+    cursor: text;
+    margin: 2px;
+}
+
+
+.Solicitudes-caja-rol-icon{
+    display: flex;
+    width: 18%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+
+.Solicitudes-caja-textonegrita{
+    font-size: 15px;
+    color: #02174A;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+
+.botonFORM{
+    all: unset
+
+}
