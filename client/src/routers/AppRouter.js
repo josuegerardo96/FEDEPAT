@@ -14,7 +14,11 @@ import PublicRoute from './PublicRoute';
 import RegisterAdminPage from '../pages/admin/RegisterAdmin';
 import EditAccount from '../pages/AccountPage/EditAccount'
 import AcceptUserPage from '../pages/admin/AcceptUserPage'
+import AddPLayerPage from '../pages/Team/addPlayerPage';
+import ShowPlayerPage from '../pages/Team/showPlayersPage';
+import AcceptPlayerPage from '../pages/admin/AcceptPlayerPage'
 import useAuth from '../auth/useAuth'
+
 
 export default function AppRouter(){
     const { user } = useAuth()
@@ -38,6 +42,8 @@ export default function AppRouter(){
                         <Route  path={routes.admin.users} element={<UsersPage/>}></Route>
                         <Route  path={routes.admin.registerAdmin} element={<RegisterAdminPage/>}></Route>
                         <Route  path={routes.admin.acceptusers} element={<AcceptUserPage/>}></Route>
+                        <Route  path={routes.admin.acceptplayer} element={<AcceptPlayerPage/>}></Route>
+
                     </Route>
                     </>
                     )}
@@ -46,6 +52,9 @@ export default function AppRouter(){
                     <Route element={<PrivateRoute />}>
                         <Route path={routes.account} element={<AccountPage/>}></Route>
                         <Route path={routes.edituser} element={<EditAccount/>}></Route>
+                        <Route path={routes.addplayer} element={<AddPLayerPage/>}></Route>
+                        <Route path={routes.showplayer} element={<ShowPlayerPage/>}></Route>
+
 
                     </Route>
 

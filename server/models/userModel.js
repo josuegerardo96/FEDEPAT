@@ -159,5 +159,22 @@ userSchema.statics.acceptuser = async function (email){
 
 }
 
+//Conseguir un equipo
+userSchema.statics.getoneuser  = async function (_id){
+
+    
+    //const exists = await this.findOne({ email })
+
+    //if(exists){
+    //    throw Error('Email already in use')
+   // }
+    
+    const user = await this.findOne({_id:_id})
+
+    return user
+
+}
+
+
 
 module.exports = mongoose.model('User',userSchema)

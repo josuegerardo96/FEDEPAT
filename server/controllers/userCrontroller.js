@@ -107,4 +107,18 @@ const acceptUser = async (req,res) => {
     }
 }
 
-module.exports= {loginUser,singupUser,editUser,showAll,deleteUser,acceptUser}
+//get one equipo
+
+const GetOneUser = async (req,res) => {
+    const {_id} =req.body
+
+    try{
+        const user = await User.getoneuser(_id)
+
+        res.status(200).json({user})
+    }catch(error){
+        res.status(400).json({error:error.message})
+    }
+}
+
+module.exports= {loginUser,singupUser,editUser,showAll,deleteUser,acceptUser,GetOneUser}

@@ -150,18 +150,38 @@ export default function HomePage(){
                                 {/* P-C-L: Principal - cuerpo - lista de opciones */}
 
 
-                                {/* Option 1: REGISTRAR EQUIPO */}
+                                {/* Option 1: REGISTRAR Jugador */}
+                                <Link to ={routes.addplayer} style={{textDecoration: 'none'}} > 
+
                                 <div className='P-C-L-cuadro'>
                                         {/* Icon */}
                                         <GiTeamUpgrade size='20px' color='#367E18'/>
                                         {/* Texts */}
                                         <div className='P-C-L-C-texto'>
-                                            <label className='P-C-L-C-textoprincipal'>Registrar un equipo</label>
-                                            <label className='P-C-L-C-textosecundario'>Podrá subscribir un grupo de personas al sistema para posteriormente hacerlos parte de un evento</label>
+                                            <label className='P-C-L-C-textoprincipal'>Registrar un jugador</label>
+                                            <label className='P-C-L-C-textosecundario'>Podrá subscribir una  persona al sistema para hacerlo  parte del equipo</label>
                                         </div>
                                         {/* Final icon */}
                                         <RiArrowRightSLine size='20px' color='#02174A'/>
                                 </div>
+                                </Link>
+
+                                
+                                {/* Option 2: ver Jugadores */}
+                                <Link to ={routes.showplayer} style={{textDecoration: 'none'}} > 
+
+                                <div className='P-C-L-cuadro'>
+                                        {/* Icon */}
+                                        <GiTeamUpgrade size='20px' color='#367E18'/>
+                                        {/* Texts */}
+                                        <div className='P-C-L-C-texto'>
+                                            <label className='P-C-L-C-textoprincipal'>Ver Jugadores del equipo</label>
+                                            <label className='P-C-L-C-textosecundario'>Podrá ver a los jugadores que son parte de su equipo y manejarlos</label>
+                                        </div>
+                                        {/* Final icon */}
+                                        <RiArrowRightSLine size='20px' color='#02174A'/>
+                                </div>
+                                </Link>
 
 
                                 {/* Option 2 */}
@@ -177,7 +197,6 @@ export default function HomePage(){
                                         {/* Final icon */}
                                         <RiArrowRightSLine size='20px' color='#02174A'/>
                                 </div>
-
 
                                 
 
@@ -295,16 +314,16 @@ export default function HomePage(){
 
 
 
-                                {/* <Link to ={routes.admin.registerAdmin} style={{textDecoration: 'none'}} > */}
+                                <Link to ={routes.admin.acceptplayer} style={{textDecoration: 'none'}} > 
                                     <div className='P-C-L-cuadro'>
                                             <RiTeamFill size='20px' color='#367E18'/>
                                             <div className='P-C-L-C-texto'>
-                                                <label className='P-C-L-C-textoprincipal'>Ver solicitudes de registro de equipos</label>
-                                                <label className='P-C-L-C-textosecundario'>Podrá aceptar o rechazar las solicitudes que hacen los delegados al querer registrar un equipo</label>
+                                                <label className='P-C-L-C-textoprincipal'>Ver solicitudes de registro de Jugadores</label>
+                                                <label className='P-C-L-C-textosecundario'>Podrá aceptar o rechazar las solicitudes que hacen los delegados al querer registrar un jugador</label>
                                             </div>
                                             <RiArrowRightSLine size='20px' color='#02174A'/>
                                     </div>
-                                {/* </Link> */}
+                                </Link> 
                                     
 
 

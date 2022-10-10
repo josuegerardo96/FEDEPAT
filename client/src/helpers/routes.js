@@ -6,11 +6,14 @@ const routes={
     account:'/account',
     projects:'/projects',
     edituser:'/edituser',
+    addplayer:'/addplayer',
+    showplayer: '/showplayer',
     project: (projectId) => (projectId ? `/projects/:${projectId}` : '/projects/projectId'),
     admin:{
         users:'/admin/users',
         registerAdmin:'/admin/registeradmin',
-        acceptusers:'/admin/acceptusers'
+        acceptusers:'/admin/acceptusers',
+        acceptplayer:'/admin/acceptplayer'
     }
 }
 export default routes;
