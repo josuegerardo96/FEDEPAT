@@ -55,7 +55,6 @@ playerSchema.statics.signup = async function(email,nombre, apellidos, telefono,i
 
     //validation
     if(!email || !nombre || !apellidos || !telefono || !identificacion || !nacimiento || !equipo ){
-        console.log("este es")
         throw Error('Todos los campos deben estar llenos')
     }
 
@@ -80,18 +79,16 @@ playerSchema.statics.signup = async function(email,nombre, apellidos, telefono,i
 
 //static edit method
 
-playerSchema.statics.edituser = async function (_id,email,password,nombre, apellidos, telefono){
+playerSchema.statics.edituser = async function (_id,email,nombre, apellidos, telefono,identificacion,gender,nacimiento){
 
-    if(!email || !password || !nombre || !apellidos || !telefono){
+    if(!email || !nombre || !apellidos || !telefono || !identificacion || !nacimiento ){
         throw Error('Todos los campos deben estar llenos')
     }
 
     if(!validator.isEmail(email)){
         throw Error('Email is not valid')
     }
-    if (!validator.isStrongPassword(password)){
-        throw Error('Password not strong enough')
-    }
+
     
     //const exists = await this.findOne({ email })
 
@@ -99,12 +96,9 @@ playerSchema.statics.edituser = async function (_id,email,password,nombre, apell
     //    throw Error('Email already in use')
    // }
 
-    const salt = await bcrypt.genSalt(10)
-    const hash = await bcrypt.hash(password,salt)
-    
-    const user = await this.findOneAndUpdate({_id},{email,password: hash,nombre,apellidos,telefono})
+    const player = await this.findOneAndUpdate({_id},{email,nombre, apellidos, telefono,identificacion,gender,nacimiento})
 
-    return user
+    return player
 
 }
 
@@ -145,6 +139,17 @@ playerSchema.statics.showonwait = async function (){
     
     const player = await this.find({estado: false}).sort({createdAt: -1}) 
     return player
+}
+
+
+playerSchema.statics.getoneplayer  = async function (_id){
+
+  
+    
+    const player = await this.findOne({_id:_id})
+
+    return player
+
 }
 
 

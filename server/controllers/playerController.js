@@ -74,4 +74,31 @@ const acceptPlayer = async (req,res) => {
     }
 }
 
-module.exports= {singupPlayer,showPlayer,deletePlayer,showPlayeronwait,acceptPlayer}
+//editar jugador
+const editPlayer = async(req,res) => {
+
+    const {_id,email,nombre, apellidos, telefono,identificacion,gender,nacimiento} =req.body
+
+    try{
+        const player = await Player.edituser(_id,email,nombre, apellidos, telefono,identificacion,gender,nacimiento)
+
+        res.status(200).json({player})
+    }catch(error){
+        res.status(400).json({error:error.message})
+    }
+
+}
+//one jugador
+
+const GetOnePlayer = async (req,res) => {
+    const {_id} =req.body
+
+    try{
+        const player = await Player.getoneplayer(_id)
+
+        res.status(200).json({player})
+    }catch(error){
+        res.status(400).json({error:error.message})
+    }
+}
+module.exports= {singupPlayer,showPlayer,deletePlayer,showPlayeronwait,acceptPlayer,editPlayer,GetOnePlayer}

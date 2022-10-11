@@ -1,7 +1,7 @@
 const express = require('express')
 
 //controller function
-const {singupPlayer,showPlayer,deletePlayer,showPlayeronwait,acceptPlayer} = require('../controllers/playerController')
+const {singupPlayer,showPlayer,deletePlayer,showPlayeronwait,acceptPlayer,editPlayer,GetOnePlayer} = require('../controllers/playerController')
 
 const router =express.Router()
 
@@ -26,5 +26,12 @@ router.get('/showplayeronwait',showPlayeronwait)
 //showAcceptPlayer
 
 router.post('/acceptPlayer',acceptPlayer)
+
+//editar player
+router.post('/editplayer',editPlayer)
+
+//One player
+router.post('/getoneplayer',GetOnePlayer)
+
 
 module.exports = router

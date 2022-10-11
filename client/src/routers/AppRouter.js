@@ -16,6 +16,7 @@ import EditAccount from '../pages/AccountPage/EditAccount'
 import AcceptUserPage from '../pages/admin/AcceptUserPage'
 import AddPLayerPage from '../pages/Team/addPlayerPage';
 import ShowPlayerPage from '../pages/Team/showPlayersPage';
+import EditPlayer from '../pages/Team/editPlayer'
 import AcceptPlayerPage from '../pages/admin/AcceptPlayerPage'
 import useAuth from '../auth/useAuth'
 
@@ -54,6 +55,8 @@ export default function AppRouter(){
                         <Route path={routes.edituser} element={<EditAccount/>}></Route>
                         <Route path={routes.addplayer} element={<AddPLayerPage/>}></Route>
                         <Route path={routes.showplayer} element={<ShowPlayerPage/>}></Route>
+                        <Route path={routes.editplayer} element={<EditPlayer/>}></Route>
+
 
 
                     </Route>

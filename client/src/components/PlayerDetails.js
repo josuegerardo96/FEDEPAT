@@ -1,5 +1,8 @@
 
 import {Container, Row ,Col,Card} from 'react-bootstrap'
+
+import { Link } from 'react-router-dom';
+
 import { useDeletePlayer } from "../hooks/useDeletePlayer"
 
 
@@ -12,6 +15,9 @@ const PlayerDetails = ({player}) =>{
         await deleteplayer(player._id)
         
     }
+
+  
+
     return (
         
         <Container>
@@ -32,6 +38,8 @@ const PlayerDetails = ({player}) =>{
         
             <button disabled = { isLoading} onClick={() => window.location.reload(false)} >Borrar</button>
             {error && <div className="error"> {error} </div>}
+
+            <Link to={`/editplayer/${player._id}` }> dd </Link>
             </Card>
             </form>
             </Col>

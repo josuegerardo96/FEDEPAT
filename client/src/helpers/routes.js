@@ -8,6 +8,7 @@ const routes={
     edituser:'/edituser',
     addplayer:'/addplayer',
     showplayer: '/showplayer',
+    editplayer: '/editplayer/:idp',
     project: (projectId) => (projectId ? `/projects/:${projectId}` : '/projects/projectId'),
     admin:{
         users:'/admin/users',
