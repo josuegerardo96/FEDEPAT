@@ -1,9 +1,11 @@
-
-import {Container, Row ,Col,Card} from 'react-bootstrap'
-
 import { Link } from 'react-router-dom';
-
 import { useDeletePlayer } from "../hooks/useDeletePlayer"
+import {RiDeleteBinFill, RiEdit2Fill} from "react-icons/ri";
+import Moment from 'moment';
+import './UserAcceptance.css';
+
+
+
 
 
 const PlayerDetails = ({player}) =>{
@@ -19,34 +21,43 @@ const PlayerDetails = ({player}) =>{
   
 
     return (
-        
-        <Container>
-
-        {player.estado && (
-            <Row className='mt-4'>
-            <Col xs={12} className="text-center"> 
-            <form className="login" onSubmit={handleSubmit}>
-            <Card style={{maxWidth: '360px' }} className="mx-auto">
-            <h4>{player.email}</h4>
-            <p><strong>Nombre: </strong>{player.nombre}</p>
-            <p><strong>Apellido: </strong>{player.apellidos}</p>
-            <p><strong>Identificacion: </strong>{player.identificacion}</p>
-            <p><strong>Telefono: </strong>{player.telefono}</p>
 
 
 
-        
-            <button disabled = { isLoading} onClick={() => window.location.reload(false)} >Borrar</button>
-            {error && <div className="error"> {error} </div>}
+        <div className='Solicitudes-caja'>
 
-            <Link to={`/editplayer/${player._id}` }> dd </Link>
-            </Card>
-            </form>
-            </Col>
-            </Row>
-            )}
-        </Container>
+                     
+                        <label className='Solicitudes-caja-textonormal'>{player.nombre}<br/>{player.apellidos}</label>
+                        <label className='Solicitudes-caja-textonormal'>+506 {player.telefono}<br/>{player.email}</label>
+                        <label className='Solicitudes-caja-textonormal'>
+                            Cédula: {player.identificacion}<br/>
+                            Nacimiento: {Moment(player.nacimiento).format("DD-MM-YYYY")} <br/> 
+                        </label>
+                        <label className='Solicitudes-caja-textonormal'>{player.gender === true ? 'Mujer' : 'Hombre'}</label>
 
+                        <div className='Solicitudes-caja-rol-icon'>
+                            
+
+
+                            {/* REJECT THE PLAYER */}
+                            <form onSubmit={handleSubmit}>    
+                                <button className='botonFORM' disabled = { isLoading} onClick={() => window.location.reload(false)} >
+                                    <RiDeleteBinFill color='#CD1F28' size='25px' />
+                                    {error && <div className="error"> {error} </div>}
+                                </button>  
+                            </form>
+
+                            {/* EDIT THE PLAYER */}
+                            <Link to={`/editplayer/${player._id}` }>
+                                    <RiEdit2Fill color='#367E18' size='25px' />
+                            </Link>
+                        
+                            <div style={{width:'20px'}}></div>
+
+
+                        </div>
+                    
+        </div>
     )
 
 }

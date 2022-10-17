@@ -136,28 +136,36 @@ const Signup = () => {
                     value = {password}
                 />
 
-            <br></br>
-            <div className="App">
-            <div>
-                <input type="checkbox" id="chekVal" name="topping" value="Paneer" onChange={()=>chekboxState()} />
-                Acepto los terminos y condiciones:
-            </div>
-            <div>
-            <a href="#openModal">terminos y condicones</a>
-
-            <div id="openModal" className="modalDialog">
-	        <div>
-		        <a href="#closemodal" title="Close" className="closemodal">X</a>
-		            <h2>Terminos y condiciones</h2>
-		            <textarea className = "textare-modal" readOnly="readonly" defaultValue="Los Términos y Condiciones representan el documento que ayuda a prevenir y resolver los problemas. Por ello, son fundamentales en muchos casos para defenderse en caso de abuso. Las Condiciones de servicio establecen la forma en que se puede utilizar tu producto, servicio o contenido de forma legalmente vinculante."
-                    ></textarea>
-		       
-	            </div>
-            </div>
-
-            </div>
-            </div>               
             
+            
+
+            {/* Checkbox para terminos y condiciones*/}
+            <div className="Terminos-checkbox">
+                <input 
+                    type="checkbox" 
+                    id="chekVal" 
+                    name="topping" 
+                    value="Paneer" 
+                    onChange={()=>chekboxState()} />
+                <label className="Terminos-Texto-pantalla">Acepto los</label><a href="#openModal" className="Terminos-Texto-pantalla-link">términos y condiciones</a>
+            </div>
+            
+            
+            {/* Ventana emergente con los terminos y condiciones */}
+            <div id="openModal" className="modalDialog">
+                <div>
+                    <a href="#closemodal" title="Close" className="closemodal">X</a>
+                        <label className="Terminos-Texto-Titulo">Términos y condiciones</label>
+                        <label className="Terminos-Texto-Cuerpo">  
+                            Los Términos y Condiciones representan el documento que ayuda a prevenir y resolver los problemas. 
+                            Por ello, son fundamentales en muchos casos para defenderse en caso de abuso. Las Condiciones de servicio establecen 
+                            la forma en que se puede utilizar tu producto, servicio o contenido de forma legalmente vinculante.
+                        </label>
+                </div>
+            </div>
+
+
+
              {/* Sign up button */}
                 <button daisbled = {isLoading} className="Button-Signup">Registrarse</button>
                 {error && <div  className= "error" >{error}</div>}

@@ -178,11 +178,47 @@ input:focus{
     margin-top: 3%;
 }
 
+
+
+
+/* Texto para terminos y condiciones */
+
+.Terminos-checkbox{
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+    width: 50%;
+}
+
+.Terminos-Texto-pantalla{
+    margin-left: 10px;
+    font-family: 'Roboto', Arial;
+    color: #858585;
+    font-size: small;
+}
+
+.Terminos-Texto-pantalla-link{
+    font-family: 'Roboto', Arial;
+    color: #4876A6;
+    background-color: #FFFFFF;
+    border-width: 0;
+    font-size: small;
+    font-weight: bold;
+    margin-left: 2%;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
 /*Terminos y condiciones*/
 
 .modalDialog {
 	position: fixed;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Roboto', sans-serif;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -200,18 +236,15 @@ input:focus{
 	pointer-events: auto;
 }
 .modalDialog > div {
-	width: 400px;
+	width: 40%;
+    height: 60%;
 	position: relative;
-	margin: 10% auto;
+	margin: 5% auto;
 	padding: 5px 20px 13px 20px;
-	border-radius: 10px;
 	background: #fff;
-	background: -moz-linear-gradient(#fff, #999);
-	background: -webkit-linear-gradient(#fff, #999);
-	background: -o-linear-gradient(#fff, #999);
-  -webkit-transition: opacity 400ms ease-in;
--moz-transition: opacity 400ms ease-in;
-transition: opacity 400ms ease-in;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
 }
 .closemodal {
 	background: #606061;
@@ -238,4 +271,25 @@ transition: opacity 400ms ease-in;
     height: 500px;
     resize: none;
 
+}
+
+
+.Terminos-Texto-Titulo{
+    margin-top: 40px;
+    font-size: xx-large;
+    padding-left: 30px;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    color: #02174A;
+}
+
+
+.Terminos-Texto-Cuerpo{
+    margin-top: 40px;
+    font-size: small;
+    font-family: 'Roboto', sans-serif;
+    color: #212121;
+    text-align: justify;
+    padding-left: 30px;
+    padding-right: 30px;
 }
