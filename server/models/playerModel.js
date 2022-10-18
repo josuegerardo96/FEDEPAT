@@ -105,7 +105,7 @@ playerSchema.statics.edituser = async function (_id,email,nombre, apellidos, tel
 //static  show all user
 playerSchema.statics.showall = async function (_id){
     
-    const player = await this.find({equipo: _id}).sort({createdAt: -1}) 
+    const player = await this.find({equipo: _id,estado:true}).sort({createdAt: -1}) 
     return player
 }
 

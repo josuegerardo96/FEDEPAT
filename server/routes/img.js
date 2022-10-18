@@ -35,4 +35,11 @@ router.post('/imageget',async(req,res) =>{
   res.json(allData)
 })
 
+router.post('/imagedel',async(req,res) =>{
+  const {_id} = req.body
+  const allData = await imageModel.findOneAndDelete({user:_id})
+  res.json(allData)
+})
+
+
 module.exports = router

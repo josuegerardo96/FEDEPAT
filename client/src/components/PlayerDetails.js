@@ -25,6 +25,7 @@ const PlayerDetails = ({player}) =>{
 
 
         <div className='Solicitudes-caja'>
+            
 
             <Link to={`/editplayer/${player._id}` }> Edit </Link>
                    
