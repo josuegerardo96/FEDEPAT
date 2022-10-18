@@ -14,7 +14,7 @@ import {GiTeamUpgrade} from "react-icons/gi"
 import {RiArrowRightSLine, RiCalendarTodoFill, RiAdminLine, RiMailDownloadFill, RiListOrdered, RiFilter3Line, RiTeamFill} from "react-icons/ri"
 
 
-
+import { useSignupAdmin } from "../../hooks/useSignUpAdmin";
 
 export default function HomePage(){
     const { user } = useAuth()
@@ -22,14 +22,26 @@ export default function HomePage(){
     // These are the consts in the "LoginPage.js" file
     const [email,setEmail] = useState('')
     const [password, setPassword] = useState ('')
-    const { login , error, isLoading } = useLogin()
+    // const { login , error, isLoading } = useLogin()
 
 
-    // Another function from the "LoginPage.js" file
+    // // Another function from the "LoginPage.js" file
+    // const handleSubmit = async(e) =>{
+    //     e.preventDefault()
+    //     await login(email,password)
+    // }
+
+
+    const {signup, error, isLoading } = useSignupAdmin()
+
     const handleSubmit = async(e) =>{
         e.preventDefault()
-        await login(email,password)
+        await signup('fedepat123@gmail.com', 'Fedepat123.',roles.admin,'fedepat','FEDEPAT','11223344',true)
     }
+
+
+
+
 
 
     // Here starts the design
