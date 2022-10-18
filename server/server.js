@@ -4,7 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const userRoutes = require('./routes/user')
 const playerRoutes = require('./routes/player')
-
+const imgRoutes = require('./routes/img')
 //express app
 const app = express()
 
@@ -15,9 +15,13 @@ app.use((req,res,next)=>{
     next()
 })
 
+
+
 //routes
 app.use('/api/user',userRoutes)
 app.use('/api/player',playerRoutes)
+app.use('/api/img',imgRoutes)
+
 //connect to db
 mongoose.connect(process.env.MONGO_URI)
     .then(()=>{
@@ -28,5 +32,6 @@ mongoose.connect(process.env.MONGO_URI)
         
     })
     .catch((error) => {console.log(error)})
+
 
 

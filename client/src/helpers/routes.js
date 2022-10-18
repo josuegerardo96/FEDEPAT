@@ -14,7 +14,8 @@ const routes={
         users:'/admin/users',
         registerAdmin:'/admin/registeradmin',
         acceptusers:'/admin/acceptusers',
-        acceptplayer:'/admin/acceptplayer'
+        acceptplayer:'/admin/acceptplayer',
+        verdocumentos:'/admin/verdocumentos/:iduser'
     }
 }
 export default routes;

@@ -39,7 +39,7 @@ const PlayerDetails = ({player}) =>{
             <button disabled = { isLoading} onClick={() => window.location.reload(false)} >Borrar</button>
             {error && <div className="error"> {error} </div>}
 
-            <Link to={`/editplayer/${player._id}` }> dd </Link>
+            <Link to={`/editplayer/${player._id}` }> Edit </Link>
             </Card>
             </form>
             </Col>

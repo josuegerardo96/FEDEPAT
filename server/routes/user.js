@@ -1,7 +1,7 @@
 const express = require('express')
 
 //controller function
-const {loginUser,singupUser,editUser,showAll,deleteUser,acceptUser,GetOneUser} = require('../controllers/userCrontroller')
+const {loginUser,singupUser,editUser,showAll,deleteUser,acceptUser,GetOneUser,GetOneUserEmail} = require('../controllers/userCrontroller')
 
 
 const router =express.Router()
@@ -31,6 +31,9 @@ router.post('/acceptuser',acceptUser)
 
 router.post('/getOneuser',GetOneUser)
 
+//get one user email
+
+router.post('/getOneuseremail',GetOneUserEmail)
 
 
 

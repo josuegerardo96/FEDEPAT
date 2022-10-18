@@ -18,6 +18,7 @@ import AddPLayerPage from '../pages/Team/addPlayerPage';
 import ShowPlayerPage from '../pages/Team/showPlayersPage';
 import EditPlayer from '../pages/Team/editPlayer'
 import AcceptPlayerPage from '../pages/admin/AcceptPlayerPage'
+import FotosDocumentos from '../pages/admin/FotosDocumentos'
 import useAuth from '../auth/useAuth'
 
 
@@ -44,6 +45,8 @@ export default function AppRouter(){
                         <Route  path={routes.admin.registerAdmin} element={<RegisterAdminPage/>}></Route>
                         <Route  path={routes.admin.acceptusers} element={<AcceptUserPage/>}></Route>
                         <Route  path={routes.admin.acceptplayer} element={<AcceptPlayerPage/>}></Route>
+                        <Route path={routes.admin.verdocumentos} element={<FotosDocumentos/>}></Route>
+
 
                     </Route>
                     </>
@@ -56,6 +59,7 @@ export default function AppRouter(){
                         <Route path={routes.addplayer} element={<AddPLayerPage/>}></Route>
                         <Route path={routes.showplayer} element={<ShowPlayerPage/>}></Route>
                         <Route path={routes.editplayer} element={<EditPlayer/>}></Route>
+                        
 
 
 

@@ -2,12 +2,15 @@ import { useAcceptUser } from "../hooks/useAcceptUser"
 import useAuth from '../auth/useAuth'
 import { useDeleteUser } from "../hooks/useDeleteUser"
 import {RiDeleteBinFill, RiCheckboxCircleFill} from "react-icons/ri";
+import { Link } from 'react-router-dom';
+
 import './UserAcceptance.css';
 
 
 const UserAcceptance = ({user}) =>{
     const { acceptuser , erroraccept, isLoadingAccept } = useAcceptUser()
     const { deleteuser , error, isLoading } = useDeleteUser()
+
 
     const  auth  = useAuth();
     const handleSubmit = async(e) =>{
@@ -56,7 +59,8 @@ const UserAcceptance = ({user}) =>{
                                     {error && <div className="error"> {error} </div>}
                                 </button>  
                             </form>
-
+                            
+                            <Link to={`/admin/verdocumentos/${user._id}` }> Datos </Link>
 
                         </div>
                     

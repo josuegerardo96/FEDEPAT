@@ -21,6 +21,7 @@ export const useSignup = () => {
         if(!response.ok){
             setIsLoading(false)
             setError(json.error)
+            
 
         }
         if(response.ok){
@@ -29,7 +30,7 @@ export const useSignup = () => {
 
             // update the auth context
             //dispatch({type: 'LOGIN',payload:json})
-            window.location.replace("/")
+            //window.location.replace("/")
             setIsLoading(false)
         }
 

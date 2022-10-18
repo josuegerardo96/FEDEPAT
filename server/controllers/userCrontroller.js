@@ -121,4 +121,16 @@ const GetOneUser = async (req,res) => {
     }
 }
 
-module.exports= {loginUser,singupUser,editUser,showAll,deleteUser,acceptUser,GetOneUser}
+const GetOneUserEmail = async (req,res) => {
+    const {email} =req.body
+
+    try{
+        const user = await User.getoneuseremail(email)
+
+        res.status(200).json({user})
+    }catch(error){
+        res.status(400).json({error:error.message})
+    }
+}
+
+module.exports= {loginUser,singupUser,editUser,showAll,deleteUser,acceptUser,GetOneUser,GetOneUserEmail}
