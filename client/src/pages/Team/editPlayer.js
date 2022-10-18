@@ -180,45 +180,52 @@ const EditPlayer = () => {
                     <div className="Adminadd-Line-Inputs-Blocks">
                         <label className="Adminadd-Sub-Title">Fecha de nacimiento</label>
                         <input
-                            className="Adminadd-Input-Personal-Data"
-                            type="text"
-                            placeholder="8888 88 88"
+                            className="Adminadd-Input-Personal-Data-Birthday"
+                            type="date"
                             onChange={(e) => setNacimiento(e.target.value)}
-                            value={nacimiento}
+                            value={nacimiento !== '' ? nacimiento : "2010-01-01" }
                         />
                     </div>
 
                 </div>
 
 
-                
-                {/* User's gender */}
-                <div className="Adminadd-Line-Inputs">
-                    <label className="Adminadd-Sub-Title-Password">Gender</label>
-                    <div className="Adminadd-Line-Inputs-Blocks"> 
+                {/* User gender */}
+                <div className="Adminadd-Line-Inputs-Gender">
+                    <label className="Adminadd-Sub-Title-Password">Género</label>
 
-                    <input
-                        id="male"
-                        name="gender"
-                        className="Adminadd-Input-Personal-Password"
-                        type="radio"
-                        onChange={(e) => setGender(false)}
-                        value={gender}
-                    />
-                    <label htmlFor="male">Male</label>
-                </div>
-                <div className="Adminadd-Line-Inputs-Blocks"> 
+                    <div style={{marginRight:'30px'}}></div>
 
-                    <input
-                        id= "female"
-                        name="gender"
-                        className="Adminadd-Input-Personal-Password"
-                        type="radio"
-                        onChange={(e) => setGender(true)}
-                        value={gender}
-                    />
-                    <label htmlFor="female">Female</label>
+
+                    <div className='Adminadd-Radio-column'>
+
+                        <div className="Adminadd-Radio-options"> 
+                            <input
+                                id="male"
+                                name="gender"
+                                type="radio"
+                                className="Adminadd-Radio"
+                                onChange={(e) => setGender(false)}
+                                value={gender}
+                            />
+                            <label className="Adminadd-Gender-Text" htmlFor="male">Hombre</label>
+                        </div>
+
+
+                        <div className="Adminadd-Radio-options"> 
+                            <input
+                                id="female"
+                                name="gender"
+                                type="radio"
+                                className="Adminadd-Radio"
+                                onChange={(e) => setGender(true)}
+                                value={gender}
+                            />
+                            <label className="Adminadd-Gender-Text" htmlFor="female">Mujer</label>
+                        </div>
+                    
                     </div>
+            
                 </div>
 
 
@@ -227,7 +234,7 @@ const EditPlayer = () => {
                     onClick={handleClickEvent}
                     daisbled={isLoading}
                     className="Adminadd-Button-Signup">
-                    Registrar Jugador
+                    Editar jugador
                 </button>
                 {error && <div className="error" >{error}</div>}
 

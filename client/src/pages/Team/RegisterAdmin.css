@@ -22,7 +22,10 @@
     margin-top: 25%;
 }
 
-
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
 
 
@@ -102,6 +105,36 @@
 }
 
 
+/* Players birthday */
+.Adminadd-Input-Personal-Data-Birthday{
+    border-style: solid;
+    border-radius: 6px;
+    border-width: 2px;
+    border-color: #B4B6BA;
+    width: 50%;    
+    height: 40px;
+    padding-left:10px;
+    padding-right: 10px;
+    
+
+    /* Text apart */
+    color: #02174A;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+::-webkit-calendar-picker-indicator{
+    cursor: pointer;
+    background-image: url("../../images/calendar.png");
+    size: 40px;
+}
+
+
+
+
+
+
 /* password */
 .Adminadd-Input-Personal-Password{
     border-style: solid;
@@ -165,6 +198,40 @@ input:focus{
     margin-top: 3%;
 }
 
+
+.Adminadd-Line-Inputs-Gender{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.Adminadd-Radio-options{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+
+}
+
+
+
+.Adminadd-Radio{
+    height: 20px;
+    background-color: #4876A6;
+}
+
+
+.Adminadd-Gender-Text{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #02174A;
+}
+
+.Adminadd-Radio-column{
+    display: block;
+
+}
 
 
 
