@@ -224,7 +224,7 @@ const AddPlayer = () => {
                     anchorOrigin={{ horizontal: "left", vertical: "bottom", }}
                     open={open}
                     autoHideDuration={5000}
-                    message="Administrador agregado"
+                    message="Jugador agregado"
                     onClose={handleToClose}
 
                 />
