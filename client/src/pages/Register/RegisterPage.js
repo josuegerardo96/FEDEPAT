@@ -48,6 +48,12 @@ const Signup = () => {
             //console.log({data})
 
             try {
+                if(cedulaphoto == '' ){
+                    console.log("falta imagen")
+                }
+
+                else{
+
                 await signup(email, password, roles.delegado, nombre, apellidos, telefono, false)
             
                 const fetchWorkout = async (email) =>{
@@ -69,7 +75,7 @@ const Signup = () => {
                     }
                 }
                 fetchWorkout(email)
-                
+            }
                 
             } catch (error) {
                 console.log(error)
