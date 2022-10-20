@@ -119,7 +119,7 @@ const EditAccount = () => {
 
                 {/* Sign up button */}
                 <button 
-                    daisbled = {isLoading} 
+                    disabled = {isLoading} 
                     className="Adminadd-Button-Signup">
                         Actualizar perfil
                 </button>

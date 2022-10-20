@@ -229,7 +229,7 @@ const Signup = () => {
 
 
              {/* Sign up button */}
-                <button daisbled = {isLoading} className="Button-Signup">Registrarse</button>
+                <button disabled = {isLoading} className="Button-Signup">Registrarse</button>
                 {error && <div  className= "error" >{error}</div>}
         
       

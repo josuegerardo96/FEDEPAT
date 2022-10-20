@@ -232,7 +232,7 @@ const EditPlayer = () => {
                 {/* Sign up button */}
                 <button
                     onClick={handleClickEvent}
-                    daisbled={isLoading}
+                    disabled={isLoading}
                     className="Adminadd-Button-Signup">
                     Editar jugador
                 </button>

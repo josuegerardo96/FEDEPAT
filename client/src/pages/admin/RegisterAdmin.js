@@ -141,7 +141,7 @@ const SignupAdmin = () => {
                 {/* Sign up button */}
                 <button 
                      onClick={handleClickEvent}
-                    daisbled = {isLoading} 
+                     disabled = {isLoading} 
                     className="Adminadd-Button-Signup">
                         Registrar administrador
                 </button>
