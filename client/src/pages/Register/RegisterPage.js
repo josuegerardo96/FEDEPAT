@@ -48,7 +48,7 @@ const Signup = () => {
             //console.log({data})
 
             try {
-                if(cedulaphoto == '' ){
+                if(cedulaphoto === '' ){
                     console.log("falta imagen")
                 }
 

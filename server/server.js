@@ -22,6 +22,11 @@ app.use('/api/user',userRoutes)
 app.use('/api/player',playerRoutes)
 app.use('/api/img',imgRoutes)
 
+
+app.use(express.static('public'))
+
+
+
 //connect to db
 mongoose.connect(process.env.MONGO_URI)
     .then(()=>{
@@ -34,4 +39,6 @@ mongoose.connect(process.env.MONGO_URI)
     .catch((error) => {console.log(error)})
 
 
-
+app.get('/' , (req, res)=>{
+    res.sendFile(path.join(__dirname, 'public/index.html'))
+})
