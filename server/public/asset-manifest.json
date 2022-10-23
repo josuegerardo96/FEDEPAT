@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.787c23b1.css",
-    "main.js": "/static/js/main.26fc8a98.js",
+    "main.css": "/static/css/main.94cd0050.css",
+    "main.js": "/static/js/main.b3d21beb.js",
     "static/media/Fedepat_bg.png": "/static/media/Fedepat_bg.115e85405f11be17c7eb.png",
     "static/media/edit_profile.png": "/static/media/edit_profile.2faea93383ec30d9dba1.png",
     "static/media/new_admin.png": "/static/media/new_admin.4fc60bf7afb468aee253.png",
     "index.html": "/index.html",
-    "main.787c23b1.css.map": "/static/css/main.787c23b1.css.map",
-    "main.26fc8a98.js.map": "/static/js/main.26fc8a98.js.map"
+    "main.94cd0050.css.map": "/static/css/main.94cd0050.css.map",
+    "main.b3d21beb.js.map": "/static/js/main.b3d21beb.js.map"
   },
   "entrypoints": [
-    "static/css/main.787c23b1.css",
-    "static/js/main.26fc8a98.js"
+    "static/css/main.94cd0050.css",
+    "static/js/main.b3d21beb.js"
   ]
 }

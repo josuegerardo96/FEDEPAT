@@ -26,8 +26,6 @@ const PlayerDetails = ({player}) =>{
 
         <div className='Solicitudes-caja'>
             
-
-            <Link to={`/editplayer/${player._id}` }> Edit </Link>
                    
                         <label className='Solicitudes-caja-textonormal'>{player.nombre}<br/>{player.apellidos}</label>
                         <label className='Solicitudes-caja-textonormal'>+506 {player.telefono}<br/>{player.email}</label>

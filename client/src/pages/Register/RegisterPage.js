@@ -5,6 +5,7 @@ import fedepat from '../../images/Fedepat_bg.png';
 import './RegisterPage.css';
 import { toast } from "react-toastify"
 import { useImageUpload } from "../../hooks/useImageUpload";
+import { RiUpload2Fill } from "react-icons/ri";
 
 const Signup = () => {
 
@@ -15,86 +16,84 @@ const Signup = () => {
     const [nombre, setNombre] = useState('')
     const [apellidos, setApellidos] = useState('')
     const [telefono, setTelefono] = useState('')
+    const [cedula, setCedula] = useState('')
     const [cedulaphoto, setCedulaPhoto] = useState('')
     const [state, setState] = useState('');
     
     //const [rol, setRol] = useState ('')
     const { signup, error, isLoading } = useSignup()
 
+
+    // const to save the image uploaded
     const { imagecedula } = useImageUpload()
 
+
     const chekboxState = () => {
-        
         var isChecked = document.getElementById('chekVal').checked;
         setState(isChecked)
-
     }
 
     // Constant function that control the form
     const handleSubmit = async (e) => {
         if (!state) {
             e.preventDefault()
-
-            toast.error("No acepto terminos y condicones")
+            toast.error("No ha acepatado términos y condiciones")
         }
         else {
-            
             e.preventDefault()
 
-          
-    
-            //var data = await imagecedula( formData); 
-
-            //console.log({data})
-
+            // Check if the image was uploaded
             try {
                 if(cedulaphoto === '' ){
                     console.log("falta imagen")
                 }
-
                 else{
-
-                await signup(email, password, roles.delegado, nombre, apellidos, telefono, false)
-            
-                const fetchWorkout = async (email) =>{
-                    const response = await fetch('/api/user/getOneuseremail',{
-                        method: 'POST',
-                        headers: {'Content-Type': 'application/json'},
-                        body: JSON.stringify({email})
-                    })
-                    const json = await response.json()
                     
-                    if(response.ok){
-                        const formData = new FormData()
-                        formData.append('name', cedulaphoto.name);
-                        formData.append('fedeimage', cedulaphoto);
-                        formData.append('categoria', 'cedula');
-                        formData.append('user', json.user._id);
-                        await imagecedula( formData); 
-    
+                    // proceed with the sign up
+                    await signup(email, password, roles.delegado, nombre, apellidos, telefono, false)
+
+                    const fetchWorkout = async (email) =>{
+                        const response = await fetch('/api/user/getOneuseremail',{
+                            method: 'POST',
+                            headers: {'Content-Type': 'application/json'},
+                            body: JSON.stringify({email})
+                        })
+                        const json = await response.json()
+                        
+                        if(response.ok){
+                            const formData = new FormData()
+                            formData.append('name', cedulaphoto.name);
+                            formData.append('fedeimage', cedulaphoto);
+                            formData.append('categoria', 'cedula');
+                            formData.append('user', json.user._id);
+                            await imagecedula( formData); 
+        
+                        }
                     }
+                    fetchWorkout(email)
                 }
-                fetchWorkout(email)
-            }
                 
             } catch (error) {
                 console.log(error)
             }
-
-            
-
         }
     }
 
+
+
+    // saves the image into this space 
     const SingleFileChange = (e) => {
         setCedulaPhoto(e.target.files[0]);
     }
+
+
+
 
     return (
 
         <div>
 
-            {/* First left-half of the screen with the logo and the FEDEPAT's legend */}
+            {/* =============== HALF-LEFT OF THE SCREEN ========================== */}
             <div className="Main-Container">
                 <img className="Main-Img" src={fedepat} alt="Fedepat" />
                 <p className='Logo-Text'>Federación costarricense de <br /> Patinaje y Deportes afines</p>
@@ -102,10 +101,10 @@ const Signup = () => {
 
 
 
+
+
+            {/* =============== HALF-RIGHT OF THE SCREEN ========================== */}   
             <form onSubmit={handleSubmit} className='Main-Login'>
-
-
-
 
 
                 {/* Page title */}
@@ -113,9 +112,7 @@ const Signup = () => {
 
 
                 {/* Put the elements next to other */}
-
                 <div className="Line-Inputs">
-
                     {/* User's name */}
                     <div className="Line-Inputs-Blocks">
                         <label className="Sub-Title">Nombre</label>
@@ -146,7 +143,6 @@ const Signup = () => {
 
                 {/* Put the elements next to each other */}
                 <div className="Line-Inputs">
-
 
 
                     {/* User's email */}
@@ -180,16 +176,58 @@ const Signup = () => {
                 <div className="Line-Inputs">
 
 
-
-                    {/* User's image cedula */}
+                    {/* User's cedula */}
                     <div className="Line-Inputs-Blocks">
-                        <label className="Sub-Title">Cedula</label>
+                        <label className="Sub-Title">Cédula</label>
                         <input
                             className="Input-Personal-Data"
-                            type="file"
-                            onChange={(e) =>  SingleFileChange (e)}
+                            type="text"
+                            placeholder="Cédula"
+                            onChange={(e) => setCedula(e.target.value)}
+                            value={cedula}
                         />
+
+                        
                     </div>
+                    
+
+
+                    {/* User's image comprobation */}
+                    <div className="Line-Inputs-Blocks">
+                    <label className="Sub-Title"></label>
+                        <input
+                            type="file"
+                            id='imagenFile'
+                            onChange={(e) => {
+                                if (e.target.files[0].size / (1024*1024) > 1){
+                                    return toast.error('La imagen es muy pesada, utilice una imagen más pequeña')
+                                }else{
+                                    return SingleFileChange (e)
+                                }
+                            }  }/>
+                        
+
+                        <div
+                        className= {cedulaphoto === '' ? 
+                            "Input-Personal-Image-NOT" : 
+                            "Input-Personal-Image-YES"}>
+
+                                <RiUpload2Fill size='15px' color='#FFF'/>
+                                {
+                                    cedulaphoto === '' ?
+                                        <label for='imagenFile'  className="Input-Personal-Image-Text">Subir comprobante de pago</label>:
+                                        <label for='imagenFile'  className="Input-Personal-Image-Text">Comprobante cargado</label>
+
+                                }
+                                
+                        </div>
+                                
+
+                    </div>
+
+
+
+                    
 
                 </div>
 
@@ -203,6 +241,13 @@ const Signup = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     value={password}
                 />
+            
+            <label className="Password-Issues-Text" style={{marginTop:'10px'}}>La contrasena debe contener:</label>
+                <div className="Password-Issues">
+                    <label className="Password-Issues-Text">- Mínimo 6 caracteres</label>
+                    <label className="Password-Issues-Text">- Un caracter especial (!@%&...)</label>
+                    <label className="Password-Issues-Text">- 3 números</label>
+                </div>
 
             
             
