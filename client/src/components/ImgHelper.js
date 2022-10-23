@@ -14,21 +14,21 @@ function imghelper({base64String,categoria}) {
 
 
     <>
-    <div className="Paginasolicitudes">
+    <div className="PaginaImagen">
 
       {/* THIS IS THE SCREENS HEADER */}
-      <div className="Paginasolicitudes-header">
-          <div className="Paginasolicitudes-header-volver">
+      <div className="PaginaImagen-header">
+          <div className="PaginaImagen-header-volver">
               <Link to ={routes.admin.acceptusers} style={{textDecoration: 'none'}} >
                   <IoArrowBackCircle size='35px' color='#02174A'/>
               </Link>
-              <label className="Paginasolicitudes-header-volvertexto">Comprobante de pago</label>
+              <label className="PaginaImagen-header-volvertexto">Comprobante de pago</label>
           </div>
 
 
-          <div className="Paginasolicitudes-header-FEDEPAT">
-              <img src={fedepat} className='Paginasolicitudes-header-logo' alt='Fedepat-logo'/>
-              <label className='Paginasolicitudes-header-texto-FEDEPAT'>Federacion Costarricense de<br/>Patinaje y Deportes Afines</label>
+          <div className="PaginaImagen-header-FEDEPAT">
+              <img src={fedepat} className='PaginaImagen-header-logo' alt='Fedepat-logo'/>
+              <label className='PaginaImagen-header-texto-FEDEPAT'>Federacion Costarricense de<br/>Patinaje y Deportes Afines</label>
           </div>
       </div>
 

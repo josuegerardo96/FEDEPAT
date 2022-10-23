@@ -1,3 +1,122 @@
+
+/* This is the full screen */
+.PaginaImagen{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top:0;
+  width: 100%;
+  height: 100%;   
+  justify-content: flex-start;
+}
+
+
+/* ============================================================== THIS IS THE SCREENS HEADER ======================================================== */
+.PaginaImagen-header{
+  background-color: white;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+  justify-content: space-between;
+}
+
+
+
+/* ================ This is the left side of the header ================== */
+
+
+.PaginaImagen-header-volver{
+  margin-left: 50px;
+  justify-content: center;
+  display: block;
+}
+
+
+
+.PaginaImagen-header-volvertexto{
+  color: #02174A;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 30px;
+}
+
+
+
+
+
+
+
+/* ================ This is right side of the header ====================== */
+
+.PaginaImagen-header-FEDEPAT{
+  margin-right: 60px;
+}
+
+
+
+.PaginaImagen-header-logo{
+  height: 100px;
+}
+
+
+.PaginaImagen-header-texto-FEDEPAT{
+  margin-left: 15px;
+  vertical-align: middle;
+  font-size: 14px;
+  text-align: center;
+  color: #02174A;
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+
+/* ========================================================= THIS IS THE SCREENS BODY =============================================================== */
+
+
+.PaginaImagen-body{
+  overflow-y: auto;
+  margin-top: 40px;
+  width: 95%;
+  height: 100%;
+  display: inline;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+
+
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  height: 56px;
+  border-radius: 8px;
+  border: 4px solid transparent;
+  background-clip: content-box;
+  background-color: #CFCFCF;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #4876A6;
+}
+
+
+
+
+/* ==================== image ======================== */
+
+
+
+
+
 .center_img {
     text-align: center;
     margin-top: 40px;
