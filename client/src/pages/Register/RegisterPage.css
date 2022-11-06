@@ -20,8 +20,9 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 20%;
-
 }
+
+
 
 /* FEDEPAT legend */
 .Logo-Text{
@@ -113,6 +114,62 @@
 }
 
 
+
+.Input-Personal-Image-YES{
+    border-radius: 2px;
+    background-color: #367E18;
+    border-radius: 6px;
+    width: 70%;    
+    height: 40px;
+    cursor: pointer;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+
+.Input-Personal-Image-NOT{
+    border-radius: 2px;
+    background-color: #CD1F28;
+    border-radius: 6px;
+    width: 70%;    
+    height: 40px;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+
+
+.Input-Personal-Image-Text{
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    padding-left: 10px;
+    font-size: small;
+    cursor: pointer;
+    
+}
+
+
+
+
+input[type="file"]{
+    display: none;
+}
+
+
+
+
+
 /* password */
 .Input-Personal-Password{
     border-style: solid;
@@ -126,6 +183,23 @@
     color: #02174A;
     font-family: 'Roboto', sans-serif;
 }
+
+
+
+.Password-Issues{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+
+
+.Password-Issues-Text{
+    color: #858585;
+    font-size: small;
+    font-style: italic;
+}
+
 
 
 /* How the texfields are gonna be looked when they are focus */
@@ -149,7 +223,7 @@ input:focus{
 
 /* This is all the design of the sign up button and its text */
 .Button-Signup{
-    margin-top: 10%;
+    margin-top: 5%;
     background-color: #4876A6;
     color: white;
     font-weight: bold;

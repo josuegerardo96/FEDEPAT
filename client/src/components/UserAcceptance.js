@@ -1,7 +1,7 @@
 import { useAcceptUser } from "../hooks/useAcceptUser"
 import useAuth from '../auth/useAuth'
 import { useDeleteUser } from "../hooks/useDeleteUser"
-import {RiDeleteBinFill, RiCheckboxCircleFill} from "react-icons/ri";
+import {RiDeleteBinFill, RiCheckboxCircleFill, RiInformationLine} from "react-icons/ri";
 import { Link } from 'react-router-dom';
 
 import './UserAcceptance.css';
@@ -59,8 +59,13 @@ const UserAcceptance = ({user}) =>{
                                     {error && <div className="error"> {error} </div>}
                                 </button>  
                             </form>
+                            <div style={{width:'20px'}}></div>
                             
-                            <Link to={`/admin/verdocumentos/${user._id}` }> Datos </Link>
+                            <Link to={`/admin/verdocumentos/${user._id}`}>
+                                <button className='botonFORM'>
+                                    <RiInformationLine color='#02174A' size='25px'/>
+                                </button>
+                            </Link>
 
                         </div>
                     

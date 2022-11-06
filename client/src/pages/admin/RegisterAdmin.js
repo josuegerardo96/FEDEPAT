@@ -135,6 +135,12 @@ const SignupAdmin = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     value = {password}
                 />
+                <label className="Password-Issues-Text" style={{marginTop:'10px'}}>La contrasena debe contener:</label>
+                <div className="Password-Issues">
+                    <label className="Password-Issues-Text">- Mínimo 6 caracteres</label>
+                    <label className="Password-Issues-Text">- Un caracter especial (!@%&...)</label>
+                    <label className="Password-Issues-Text">- 3 números</label>
+                </div>
 
                 
 

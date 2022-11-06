@@ -1,3 +1,4 @@
+const path = require('path');
 require('dotenv').config()
 
 const express = require('express');
@@ -9,20 +10,29 @@ const competitionRoutes = require('./routes/competition')
 //express app
 const app = express()
 
-//middleware
+// middleware
 app.use(express.json())
 app.use((req,res,next)=>{
     console.log(req.path,req.method)
     next()
 })
 
-
-
-//routes
+// routes
 app.use('/api/user',userRoutes)
 app.use('/api/player',playerRoutes)
 app.use('/api/img',imgRoutes)
 app.use('/api/competition',competitionRoutes)
+
+
+
+// go to react and start!
+app.use(express.static('public'))
+app.get('*' , (req, res)=>{
+    res.sendFile(path.join(__dirname, '/public/index.html'));
+})
+
+
+
 
 //connect to db
 mongoose.connect(process.env.MONGO_URI)
@@ -34,6 +44,7 @@ mongoose.connect(process.env.MONGO_URI)
         
     })
     .catch((error) => {console.log(error)})
+
 
 
 
