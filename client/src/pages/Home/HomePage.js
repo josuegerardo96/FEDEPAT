@@ -286,21 +286,23 @@ export default function HomePage(){
 
 
 
-                                {/* <Link to ={routes.admin.registerAdmin} style={{textDecoration: 'none'}} > */}
+                                 <Link to ={routes.admin.vercompetencia} style={{textDecoration: 'none'}} > 
+                                
                                     <div className='P-C-L-cuadro'>
                                             <RiFilter3Line size='20px' color='#367E18'/>
                                             <div className='P-C-L-C-texto'>
-                                                <label className='P-C-L-C-textoprincipal'>Ver y filtrar usuarios</label>
-                                                <label className='P-C-L-C-textosecundario'>Podrá ver a todos los usuarios registrados y filtrarlos por diferentes categorías</label>
+                                                <label className='P-C-L-C-textoprincipal'>Ver y filtrar Competencia</label>
+                                                <label className='P-C-L-C-textosecundario'>Podrá ver a todos las Competencias registrados y filtrarlos por diferentes categorías</label>
                                             </div>
                                             <RiArrowRightSLine size='20px' color='#02174A'/>
                                     </div>
-                                {/* </Link> */}
 
+                                </Link> 
 
 
 
                                 {/* <Link to ={routes.admin.registerAdmin} style={{textDecoration: 'none'}} > */}
+                                <Link to ={routes.admin.crearcompetencia} style={{textDecoration: 'none'}} >
                                     <div className='P-C-L-cuadro'>
                                             <IoMdCreate size='20px' color='#367E18'/>
                                             <div className='P-C-L-C-texto'>
@@ -309,6 +311,7 @@ export default function HomePage(){
                                             </div>
                                             <RiArrowRightSLine size='20px' color='#02174A'/>
                                     </div>
+                                </Link>
                                 {/* </Link> */}
 
 

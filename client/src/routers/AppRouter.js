@@ -19,6 +19,9 @@ import ShowPlayerPage from '../pages/Team/showPlayersPage';
 import EditPlayer from '../pages/Team/editPlayer'
 import AcceptPlayerPage from '../pages/admin/AcceptPlayerPage'
 import FotosDocumentos from '../pages/admin/FotosDocumentos'
+import CrearCompeticion from '../pages/admin/CrearCompeticion';
+import CompetitionPage from '../pages/admin/CompetitionPage';
+import EditCompetition from '../pages/admin/EditCompetition';
 import useAuth from '../auth/useAuth'
 
 
@@ -46,6 +49,9 @@ export default function AppRouter(){
                         <Route  path={routes.admin.acceptusers} element={<AcceptUserPage/>}></Route>
                         <Route  path={routes.admin.acceptplayer} element={<AcceptPlayerPage/>}></Route>
                         <Route path={routes.admin.verdocumentos} element={<FotosDocumentos/>}></Route>
+                        <Route path={routes.admin.crearcompetencia} element={<CrearCompeticion/>}></Route>
+                        <Route path={routes.admin.vercompetencia} element={<CompetitionPage/>}></Route>
+                        <Route path={routes.admin.editcompetition} element={<EditCompetition/>}></Route>
 
 
                     </Route>

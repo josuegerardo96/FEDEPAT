@@ -15,7 +15,10 @@ const routes={
         registerAdmin:'/admin/registeradmin',
         acceptusers:'/admin/acceptusers',
         acceptplayer:'/admin/acceptplayer',
-        verdocumentos:'/admin/verdocumentos/:iduser'
+        verdocumentos:'/admin/verdocumentos/:iduser',
+        crearcompetencia:'/admin/crearcompetencia',
+        vercompetencia:'/admin/vercompetencia',
+        editcompetition: '/admin/editcompetition/:idcom'
     }
 }
 export default routes;
