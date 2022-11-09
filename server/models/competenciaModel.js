@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
-const validator = require('validator')
+
 
 const Schema = mongoose.Schema
 
@@ -10,45 +9,44 @@ const competitionSchema = new Schema({
         requiere: true,
 
     },
-    categoria: {
-        type: String,
-        requiere: true,
-
-    },
     tipo: {
         type: String,
         requiere: true,
 
     },
+    provincia: {
+        type: String,
+        requiere: true
+    },
     ubicación: {
         type: String,
         requiere: true
     },
-    genero: {
-        type: String,
+    fecha:{
+        type:Date,
         requiere: true
     }
 })
 
 // static signup method
 
-competitionSchema.statics.signup = async function (nombre, categoria, tipo, ubicación, genero) {
+competitionSchema.statics.signup = async function (nombre, tipo,provincia, ubicación, fecha) {
 
     //validation
     if (!nombre) {
         throw Error('Debe tener un nombre para la competencia')
     }
-    if (!categoria) {
-        throw Error('No selecciono categoria')
+    if (!provincia) {
+        throw Error('No selecciono provincia')
     }
     if (!tipo) {
         throw Error('No selecciono tipo de patin')
     }
     if (!ubicación) {
-        throw Error('no selecciono una provincioa')
+        throw Error('no increso una ubicacion')
     }
-    if (!genero) {
-        throw Error('No eligio un genero')
+    if (!fecha) {
+        throw Error('No eligio una fecha de inicio')
     }
 
 
@@ -58,7 +56,7 @@ competitionSchema.statics.signup = async function (nombre, categoria, tipo, ubic
         throw Error('evento ya existe')
     }
 
-    const competition = await this.create({ nombre, categoria, tipo, ubicación, genero })
+    const competition = await this.create({ nombre, provincia, tipo, ubicación, fecha })
 
     return competition
 
@@ -68,13 +66,13 @@ competitionSchema.statics.signup = async function (nombre, categoria, tipo, ubic
 
 //static edit method
 
-competitionSchema.statics.editcompetencia = async function (_id, nombre, categoria, tipo, ubicación, genero) {
+competitionSchema.statics.editcompetencia = async function (_id, nombre, tipo,provincia, ubicación, fecha) {
 
     //validation
     if (!nombre) {
         throw Error('Debe tener un nombre para la competencia')
     }
-    if (!categoria) {
+    if (!provincia) {
         throw Error('No selecciono categoria')
     }
     if (!tipo) {
@@ -83,11 +81,11 @@ competitionSchema.statics.editcompetencia = async function (_id, nombre, categor
     if (!ubicación) {
         throw Error('no selecciono una provincioa')
     }
-    if (!genero) {
+    if (!fecha) {
         throw Error('No eligio un genero')
     }
 
-    const competition = await this.findOneAndUpdate({ _id }, { nombre, categoria, tipo, ubicación, genero })
+    const competition = await this.findOneAndUpdate({ _id }, { nombre, tipo,provincia, ubicación, fecha })
 
     return competition
 

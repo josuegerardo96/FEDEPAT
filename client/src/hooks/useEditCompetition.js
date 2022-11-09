@@ -6,7 +6,7 @@ export const useEditPlayer = () => {
     const [isLoading,setIsLoading] = useState(null)
     
 
-    const editcompetition = async (_id,nombre,categoria,tipo, ubicación, genero)  => {
+    const editcompetition = async (_id,nombre, tipo,provincia, ubicación, fecha)  => {
 
         setIsLoading(true)
         setError(null)
@@ -14,7 +14,7 @@ export const useEditPlayer = () => {
         const response = await fetch('/api/competition/editCompetition',{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({_id,nombre,categoria,tipo, ubicación, genero})
+            body: JSON.stringify({_id,nombre, tipo,provincia, ubicación, fecha})
         })
         const json = await response.json()
 

@@ -7,6 +7,8 @@ const userRoutes = require('./routes/user')
 const playerRoutes = require('./routes/player')
 const imgRoutes = require('./routes/img')
 const competitionRoutes = require('./routes/competition')
+const registrocompRoutes = require ('./routes/registrocomp')
+
 //express app
 const app = express()
 
@@ -22,7 +24,7 @@ app.use('/api/user',userRoutes)
 app.use('/api/player',playerRoutes)
 app.use('/api/img',imgRoutes)
 app.use('/api/competition',competitionRoutes)
-
+app.use('/api/registcomp',registrocompRoutes)
 
 
 // go to react and start!

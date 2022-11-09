@@ -1,20 +1,21 @@
 import {useState} from 'react'
+import { toast } from "react-toastify"
 //import useAuth    from '../auth/useAuth'
 
-export const useSignupCompetition = () => {
+export const useAddPlayerComp = () => {
     const [error, setError] = useState(null)
     const [isLoading,setIsLoading] = useState(null)
     //const { dispatch } = useAuth()
 
-    const signup = async (nombre, tipo,provincia, ubicación, fecha)  => {
+    const addplayer = async (competencia,jugador,categoria)  => {
 
         setIsLoading(true)
         setError(null)
 
-        const response = await fetch('/api/competition/singupCompetition',{
+        const response = await fetch('/api/registcomp/registrocomp',{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({nombre, tipo,provincia, ubicación, fecha})
+            body: JSON.stringify({competencia,jugador,categoria})
         })
         const json = await response.json()
 
@@ -23,13 +24,13 @@ export const useSignupCompetition = () => {
             setError(json.error)
         }
         if(response.ok){
-         
+            toast.error("Registro Hecho")
             //window.location.replace("/admin/registeradmin")  
-            window.location.reload();     
+            //window.location.replace("/")
             setIsLoading(false)
         }
     
     }
 
-    return { signup,isLoading,error }
+    return { addplayer,isLoading,error }
 }

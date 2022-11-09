@@ -9,14 +9,14 @@ const Competition = require('../models/competenciaModel')
 //signup user
 
 const singupCompetition = async(req,res) => {
-    const {nombre, categoria, tipo, ubicación, genero} = req.body
+    const {nombre, tipo,provincia, ubicación, fecha} = req.body
     try {
-        const competition = await Competition.signup(nombre,categoria,tipo, ubicación, genero)
+        const competition = await Competition.signup(nombre, tipo,provincia, ubicación, fecha)
 
         // create  a token
         //const token = createToken(user._id)
 
-        res.status(200).json({nombre, categoria, tipo, ubicación, genero,competition})
+        res.status(200).json({nombre, tipo,provincia, ubicación, fecha,competition})
     } catch (error) {
         res.status(400).json({error:error.message})
         
@@ -28,12 +28,12 @@ const singupCompetition = async(req,res) => {
 
 const editCompetition = async(req,res) => {
 
-    const {_id,nombre, categoria, tipo, ubicación, genero} =req.body
+    const {_id,nombre, tipo,provincia, ubicación, fecha} =req.body
 
     try{
-        const competition = await Competition.editcompetencia(_id,nombre, categoria, tipo, ubicación, genero)
+        const competition = await Competition.editcompetencia(_id,nombre, tipo,provincia, ubicación, fecha)
 
-        res.status(200).json({nombre, categoria, tipo, ubicación, genero,competition})
+        res.status(200).json({nombre, tipo,provincia, ubicación, fecha,competition})
     }catch(error){
         res.status(400).json({error:error.message})
     }

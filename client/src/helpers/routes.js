@@ -9,6 +9,9 @@ const routes={
     addplayer:'/addplayer',
     showplayer: '/showplayer',
     editplayer: '/editplayer/:idp',
+    verallcompetencias:'/verallcompetencias',
+    registrarplayer: '/registrarplayer/:idcomp',
+    verregistrados: '/verregistrados/:idcomp',
     project: (projectId) => (projectId ? `/projects/:${projectId}` : '/projects/projectId'),
     admin:{
         users:'/admin/users',

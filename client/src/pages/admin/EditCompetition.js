@@ -16,10 +16,10 @@ const EditCompetition = () => {
 
 
     const [nombre, setNombre] = useState('')
-    const [categoria, setCategoria] = useState('')
     const [tipo, setTipo] = useState('')
+    const [provincia, setProvincia] = useState('')
     const [ubicación, setUbicación] = useState('')
-    const [genero, setGenero] = useState('')
+    const [fecha, setFecha] = useState('')
 
     useEffect(() => {
         const fetchWorkout = async (_id) =>{
@@ -32,10 +32,10 @@ const EditCompetition = () => {
             
             if(response.ok){
                 setNombre(json.competition.nombre)
-                setCategoria(json.competition.categoria)
                 setTipo(json.competition.tipo)
+                setProvincia(json.competition.provincia)
                 setUbicación(json.competition.ubicación)
-                setGenero(json.competition.genero)
+                setFecha(json.competition.fecha)
             }
         }
         fetchWorkout(idcom)
@@ -47,7 +47,7 @@ const EditCompetition = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await editcompetition(idcom,nombre,categoria,tipo,ubicación,genero)
+        await editcompetition(idcom,nombre, tipo,provincia, ubicación, fecha)
     }
 
 
@@ -103,6 +103,7 @@ const EditCompetition = () => {
 
                     <div className="Adminadd-Line-Inputs-Blocks">
 
+                        {/*
                         <label htmlFor="catec">Seleccione una categoria: </label>
                         <select name="catec" id="catec" onChange={(e) => setCategoria(e.target.value)} value={categoria}>
                             <option value="Prejuvenil (13-14 años)">Prejuvenil (13-14 años)</option>
@@ -117,16 +118,17 @@ const EditCompetition = () => {
                             <option value="Infantil A1 (12 años)">Infantil A1 (12 años)</option>
 
                         </select>
+                        */}
 
-                        <label htmlFor="catec">Seleccione una categoria: </label>
+                        <label htmlFor="catec">Seleccione una Tipo del Torneo: </label>
                         <select name="catec" id="catec" onChange={(e) => setTipo(e.target.value)} value={tipo}>
                             <option value="Patín recreativo en línea o tradicional (4 ruedas)">Patín recreativo en línea o tradicional (4 ruedas)</option>
                             <option value="Semiprofesional bota alta en línea">Semiprofesional bota alta en línea</option>
                         </select>
 
                         <br></br>
-                        <label htmlFor="catec">Ubicacion: </label>
-                        <select name="catec" id="catec" onChange={(e) => setUbicación(e.target.value)} value={ubicación}>
+                        <label htmlFor="catec">Provincia: </label>
+                        <select name="catec" id="catec" onChange={(e) => setProvincia(e.target.value)} value={provincia}>
                             <option value="San Jose">San Jose</option>
                             <option value="Cartago">Cartago</option>
                             <option value="Heredia">Heredia</option>
@@ -136,15 +138,27 @@ const EditCompetition = () => {
                             <option value="Guanacaste">Guanacaste</option>
                         </select>
 
-
-                        <label htmlFor="catec">Genero: </label>
-                        <select name="catec" id="catec" onChange={(e) => setGenero(e.target.value)} value={genero}>
-                            <option value="Hombre">Hombre</option>
-                            <option value="Mujer">Mujer</option>
-                            <option value="Mixto">Mixto</option>
-
-                        </select>
-
+                    {/* competition's name */}
+                    <div className="Adminadd-Line-Inputs-Blocks">
+                        <label className="Adminadd-Sub-Title">Ubicación</label>
+                        <input
+                            className="Adminadd-Input-Personal-Data"
+                            type="text"
+                            placeholder="Escriba el nombre de la competencia"
+                            onChange={(e) => setUbicación(e.target.value)}
+                            value={ubicación}
+                        />
+                    </div>
+                
+                    <div className="Adminadd-Line-Inputs-Blocks">
+                        <label className="Adminadd-Sub-Title">Fecha de inico</label>
+                        <input
+                            className="Adminadd-Input-Personal-Data-Birthday"
+                            type="date"
+                            onChange={(e) => setFecha(e.target.value)}
+                            value={fecha}
+                        />
+                    </div>
 
 
 

@@ -12,12 +12,14 @@ import { Snackbar } from '@mui/material';
 
 const SignupCompetition = () => {
     // Constants that control the app's flow
+    const current = new Date();
+    const date = `${current.getFullYear()}-${current.getMonth()+1}-${("0" + current.getDate()).slice(-2)}`;
 
     const [nombre, setNombre] = useState('')
-    const [categoria, setCategoria] = useState('Prejuvenil (13-14 años)')
     const [tipo, setTipo] = useState('Patín recreativo en línea o tradicional (4 ruedas)')
-    const [ubicación, setUbicación] = useState('San Jose')
-    const [genero, setGenero] = useState('Hombre')
+    const [provincia, setProvincia] = useState('San Jose')
+    const [ubicación, setUbicación] = useState('')
+    const [fecha, setFecha] = useState(date)
 
 
 
@@ -25,7 +27,7 @@ const SignupCompetition = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await signup(nombre,categoria,tipo,ubicación,genero)
+        await signup(nombre, tipo,provincia, ubicación, fecha)
     }
 
 
@@ -81,6 +83,7 @@ const SignupCompetition = () => {
 
                     <div className="Adminadd-Line-Inputs-Blocks">
 
+                        {/*
                         <label htmlFor="catec">Seleccione una categoria: </label>
                         <select name="catec" id="catec" onChange={(e) => setCategoria(e.target.value)} value={categoria}>
                             <option value="Prejuvenil (13-14 años)">Prejuvenil (13-14 años)</option>
@@ -95,16 +98,17 @@ const SignupCompetition = () => {
                             <option value="Infantil A1 (12 años)">Infantil A1 (12 años)</option>
 
                         </select>
+                        */}
 
-                        <label htmlFor="catec">Seleccione una categoria: </label>
+                        <label htmlFor="catec">Seleccione una Tipo del Torneo: </label>
                         <select name="catec" id="catec" onChange={(e) => setTipo(e.target.value)} value={tipo}>
                             <option value="Patín recreativo en línea o tradicional (4 ruedas)">Patín recreativo en línea o tradicional (4 ruedas)</option>
                             <option value="Semiprofesional bota alta en línea">Semiprofesional bota alta en línea</option>
                         </select>
 
                         <br></br>
-                        <label htmlFor="catec">Ubicacion: </label>
-                        <select name="catec" id="catec" onChange={(e) => setUbicación(e.target.value)} value={ubicación}>
+                        <label htmlFor="catec">Provincia: </label>
+                        <select name="catec" id="catec" onChange={(e) => setProvincia(e.target.value)} value={provincia}>
                             <option value="San Jose">San Jose</option>
                             <option value="Cartago">Cartago</option>
                             <option value="Heredia">Heredia</option>
@@ -114,15 +118,27 @@ const SignupCompetition = () => {
                             <option value="Guanacaste">Guanacaste</option>
                         </select>
 
-
-                        <label htmlFor="catec">Genero: </label>
-                        <select name="catec" id="catec" onChange={(e) => setGenero(e.target.value)} value={genero}>
-                            <option value="Hombre">Hombre</option>
-                            <option value="Mujer">Mujer</option>
-                            <option value="Mixto">Mixto</option>
-
-                        </select>
-
+                    {/* competition's name */}
+                    <div className="Adminadd-Line-Inputs-Blocks">
+                        <label className="Adminadd-Sub-Title">Ubicación</label>
+                        <input
+                            className="Adminadd-Input-Personal-Data"
+                            type="text"
+                            placeholder="Escriba el nombre de la competencia"
+                            onChange={(e) => setUbicación(e.target.value)}
+                            value={ubicación}
+                        />
+                    </div>
+                
+                    <div className="Adminadd-Line-Inputs-Blocks">
+                        <label className="Adminadd-Sub-Title">Fecha de inico</label>
+                        <input
+                            className="Adminadd-Input-Personal-Data-Birthday"
+                            type="date"
+                            onChange={(e) => setFecha(e.target.value)}
+                            value={fecha !== '' ? fecha : date }
+                        />
+                    </div>
 
 
 
@@ -142,7 +158,7 @@ const SignupCompetition = () => {
                     onClick={handleClickEvent}
                     disabled={isLoading}
                     className="Adminadd-Button-Signup">
-                    Registrar administrador
+                    Registrar Competencia
                 </button>
                 {error && <div className="error" >{error}</div>}
 
@@ -159,7 +175,7 @@ const SignupCompetition = () => {
                     anchorOrigin={{ horizontal: "left", vertical: "bottom", }}
                     open={open}
                     autoHideDuration={5000}
-                    message="Administrador agregado"
+                    message="Competencia  agregada"
                     onClose={handleToClose}
 
                 />

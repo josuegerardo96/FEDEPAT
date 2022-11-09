@@ -22,6 +22,12 @@ import FotosDocumentos from '../pages/admin/FotosDocumentos'
 import CrearCompeticion from '../pages/admin/CrearCompeticion';
 import CompetitionPage from '../pages/admin/CompetitionPage';
 import EditCompetition from '../pages/admin/EditCompetition';
+import VercompallPage from '../pages/competition/VercompallPage';
+import Verregistrados from '../pages/competition/Verregistrados';
+
+import Registplayercomp from '../pages/competition/Registplayercomp';
+
+
 import useAuth from '../auth/useAuth'
 
 
@@ -65,8 +71,9 @@ export default function AppRouter(){
                         <Route path={routes.addplayer} element={<AddPLayerPage/>}></Route>
                         <Route path={routes.showplayer} element={<ShowPlayerPage/>}></Route>
                         <Route path={routes.editplayer} element={<EditPlayer/>}></Route>
-                        
-
+                        <Route path={routes.verallcompetencias} element={<VercompallPage/>}></Route>
+                        <Route path={routes.registrarplayer} element={<Registplayercomp/>}></Route>
+                        <Route path={routes.verregistrados} element={<Verregistrados/>}></Route>
 
 
                     </Route>

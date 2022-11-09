@@ -185,6 +185,8 @@ export default function HomePage(){
 
 
                                 {/* Option 2 */}
+                               
+                                <Link to ={routes.verallcompetencias} style={{textDecoration: 'none'}} > 
 
                                 <div className='P-C-L-cuadro'>
                                         {/* Icon */}
@@ -196,9 +198,9 @@ export default function HomePage(){
                                         </div>
                                         {/* Final icon */}
                                         <RiArrowRightSLine size='20px' color='#02174A'/>
-                                </div>
+                                </div>  
+                                </Link>
 
-                                
 
                             </div>
                         </div>
