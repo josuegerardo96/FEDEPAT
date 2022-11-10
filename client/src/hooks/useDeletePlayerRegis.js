@@ -1,15 +1,15 @@
 import {useState} from 'react'
 
-export const useDeleteCompetiton = () => {
+export const useDeletePlayerRegis = () => {
     const [error, setError] = useState(null)
     const [isLoading,setIsLoading] = useState(null)
 
-    const deletecompetition = async (_id)  => {
+    const deleteplayer = async (_id)  => {
 
         setIsLoading(true)
         setError(null)
 
-        const response = await fetch('/api/competition/deleteCompetition',{
+        const response = await fetch('/api/registcomp/deleteregistro',{
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({_id})
@@ -33,5 +33,5 @@ export const useDeleteCompetiton = () => {
 
     }
 
-    return { deletecompetition ,isLoading,error }
+    return { deleteplayer ,isLoading,error }
 }

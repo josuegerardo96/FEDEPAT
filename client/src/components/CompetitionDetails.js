@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useDeleteCompetiton } from "../hooks/useDeleteCompetition"
+import { useDeleteCompJugadores  } from "../hooks/UseDeleteCompJugadores"
 import {RiDeleteBinFill, RiEdit2Fill} from "react-icons/ri";
-import Moment from 'moment';
 import './UserAcceptance.css';
 
 
@@ -10,13 +10,17 @@ import './UserAcceptance.css';
 
 const CompetitionDetails = ({competition}) =>{
     const { deletecompetition , error, isLoading } = useDeleteCompetiton()
+    const { deletecompetition2 ,error2 } = useDeleteCompJugadores()
     const current = new Date(competition.fecha)
     const date = `${current.getFullYear()}-${current.getMonth()+1}-${("0" + current.getDate()).slice(-2)}`;
 
     const handleSubmit = async(e) =>{
         e.preventDefault()
 
+        await  deletecompetition2 (competition._id)
         await deletecompetition(competition._id)
+
+        
         
     }
 
@@ -44,9 +48,10 @@ const CompetitionDetails = ({competition}) =>{
 
                             {/* Delete THE COMPETITON */}
                             <form onSubmit={handleSubmit}>    
-                                <button className='botonFORM' disabled = { isLoading} onClick={() => window.location.reload(false)} >
+                                <button className='botonFORM' disabled = { isLoading}  >
                                     <RiDeleteBinFill color='#CD1F28' size='25px' />
                                     {error && <div className="error"> {error} </div>}
+                                    {error2 && <div className="error"> {error2} </div>}
                                 </button>  
                             </form>
 
