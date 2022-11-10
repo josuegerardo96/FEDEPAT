@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import CompetitionDetails from '../../components/CompetitionDetails'
 import './UserPage.css';
+import './navbar.css'
 import {IoArrowBackCircle} from "react-icons/io5"
 import fedepat from '../../images/Fedepat_bg.png';
 import { Link } from 'react-router-dom';
@@ -9,17 +10,28 @@ import routes from '../../helpers/routes';
 
 const  CompetitionPage = () => {
     const [competitions ,setCompetition] = useState(null)
-    useEffect(() => {
-        const fetchWorkout = async () =>{
-            const response = await fetch('/api/competition/showAllCompetition')
-            const json = await response.json()
-            
-            if(response.ok){
-                setCompetition(json)
-            }
+    const [provincia ,setProvincia] = useState('todo')
+    const [tipo, setTipo] = useState('todo')
+
+    const fetchWorkout = async (provincia,tipo) =>{
+        const response = await fetch('/api/competition/showAllCompetition',{
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({provincia,tipo})
+        })
+        const json = await response.json()
+        
+        if(response.ok){
+            setCompetition(json)
         }
-        fetchWorkout()
-    },[])
+    }
+    
+
+    useEffect(() => {
+        fetchWorkout(provincia,tipo)
+    },[provincia,tipo])
+
+
 
     return(
         <>
@@ -47,6 +59,28 @@ const  CompetitionPage = () => {
                 {/* THIS IS THE SCREENS BODY */}
 
                 <div className="Paginausuarios-body">
+                <div className="topnav">
+           
+                        <select name="catec" id="catec" onChange={(e) => setProvincia(e.target.value)} value={provincia}>
+                        <option value="todo">todo</option>
+                            <option value="San Jose">San Jose</option>
+                            <option value="Cartago">Cartago</option>
+                            <option value="Heredia">Heredia</option>
+                            <option value="Limón">Limón</option>
+                            <option value="Alajuela">Alajuela</option>
+                            <option value="Puntarenas">Puntarenas</option>
+                            <option value="Guanacaste">Guanacaste</option>
+                            
+
+                        </select>
+
+                        <select name="catec" id="catec" onChange={(e) => setTipo(e.target.value)} value={tipo}>
+                            <option value="todo">todo</option>
+                            <option value="Patín recreativo en línea o tradicional (4 ruedas)">Patín recreativo en línea o tradicional (4 ruedas)</option>
+                            <option value="Semiprofesional bota alta en línea">Semiprofesional bota alta en línea</option>
+                        </select>
+                    </div>
+
                     <div>
                         {competitions && competitions.map((competition) =>(
                             <CompetitionDetails key={competition._id} competition={competition} />

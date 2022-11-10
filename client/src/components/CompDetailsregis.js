@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 //import { useDeleteCompetiton } from "../hooks/useDeleteCompetition"
-//import {RiDeleteBinFill, RiEdit2Fill} from "react-icons/ri";
+import { FcSportsMode,FcApprove } from "react-icons/fc";
 //import Moment from 'moment';
 import './UserAcceptance.css';
 
@@ -51,15 +51,15 @@ const CompetitionDetails = ({competition}) =>{
                             </form>
                             */}
 
-                            {/* EDIT THE Competition */}
+                            {/* Registrar jugador */}
                             <Link to={`/registrarplayer/${competition._id}` }>
-                                   Registrar Jugador
+                                 <FcSportsMode color='#CD1F28' size='25px' />
                             </Link>
 
 
 
                             <Link to={`/verregistrados/${competition._id}` }>
-                                   ver jugadores registrados
+                                <FcApprove color='#CD1F28' size='25px' />
                             </Link>
                         
                             <div style={{width:'20px'}}></div>

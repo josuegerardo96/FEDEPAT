@@ -77,7 +77,7 @@ const EditCompetition = () => {
             <form onSubmit={handleSubmit} className='Adminadd'>
 
                 {/* Page title */}
-                <h3 className="Adminadd-Title">Registrar una Competencia </h3>
+                <h3 className="Adminadd-Title">Editar una Competencia </h3>
 
 
                 {/* Put the elements next to other */}
@@ -178,7 +178,7 @@ const EditCompetition = () => {
                     onClick={handleClickEvent}
                     disabled={isLoading}
                     className="Adminadd-Button-Signup">
-                    Registrar administrador
+                    Editar Competencia
                 </button>
                 {error && <div className="error" >{error}</div>}
 

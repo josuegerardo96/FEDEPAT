@@ -15,7 +15,7 @@ router.post('/editCompetition',editCompetition)
 
 //Mostrar Competition route
 
-router.get('/showAllCompetition',showAllCompetition)
+router.post('/showAllCompetition',showAllCompetition)
 
 //delete Competition
 

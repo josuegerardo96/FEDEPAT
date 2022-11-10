@@ -92,10 +92,26 @@ competitionSchema.statics.editcompetencia = async function (_id, nombre, tipo,pr
 }
 
 //static  show all competition
-competitionSchema.statics.showall = async function () {
+competitionSchema.statics.showall = async function (provincia,tipo) {
+    if((provincia === "todo") && (tipo === "todo")){
+        const competition = await this.find({}).sort({ createdAt: -1 })
+        return competition
+    }
+    else  if (tipo === "todo") {
+        const competition = await this.find({provincia}).sort({ createdAt: -1 })
+        return competition
+    }
+    else  if ( provincia === "todo") {
+        const competition = await this.find({tipo}).sort({ createdAt: -1 })
+        return competition
+    }
+    else{
+        const competition = await this.find({provincia,tipo}).sort({ createdAt: -1 })
+        return competition
+    }
+    
 
-    const competition = await this.find({}).sort({ createdAt: -1 })
-    return competition
+    
 }
 
 //static delete competition

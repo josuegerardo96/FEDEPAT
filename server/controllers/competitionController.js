@@ -43,10 +43,10 @@ const editCompetition = async(req,res) => {
 //show all user
 
 const showAllCompetition = async(req,res) => {
-
+    const {provincia,tipo} =req.body
 
     try{
-        const competition = await Competition.showall()
+        const competition = await Competition.showall(provincia,tipo)
 
         res.status(200).json(competition)
     }catch(error){
