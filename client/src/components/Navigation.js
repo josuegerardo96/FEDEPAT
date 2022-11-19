@@ -33,7 +33,7 @@ export default function Navigation(){
                 {/* This is just the logo and the legend of the FEDEPAT, it has no action */}
                 {/* <Navbar.Brand as={NavLink} to ={routes.home}> */}
                 <img src={fedepat} className='Navbar-imagen-FEDEPAT' alt='Fedepat-logo'/>
-                <label className='Navbar-texto-FEDEPAT'>Federacion Costarricense de<br/>Patinaje y Deportes Afines</label>
+                <label className='Navbar-texto-FEDEPAT'>Federación Costarricense de<br/>Patinaje y Deportes Afines</label>
                 
 
 

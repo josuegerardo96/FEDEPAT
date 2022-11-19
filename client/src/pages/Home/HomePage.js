@@ -49,7 +49,7 @@ export default function HomePage(){
 
 
                         {/* Title of the screen */}
-                        <h3 className='Title-Home'>Iniciar sesion</h3>
+                        <h3 className='Title-Home'>Iniciar sesión</h3>
                         
                     
                         {/* Write the email field */}

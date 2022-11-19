@@ -91,7 +91,7 @@ userSchema.statics.login = async function(email,password){
     }
 
     if(!user.estado){
-        throw Error('No a sido acceptado aun, Intente mas tarde')
+        throw Error('No ha sido acceptado aún, Intente más tarde')
     }
 
   
