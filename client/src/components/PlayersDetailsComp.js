@@ -17,6 +17,8 @@ const PlayerDetailsComp = ({ player, compid }) => {
 
 
     useEffect(() => {
+
+
         const fetchWorkout = async (jugador, competencia) => {
             const response = await fetch('/api/registcomp/GetListaJugadoresComp', {
                 method: 'POST',
