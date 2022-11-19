@@ -46,6 +46,11 @@ const CompetitionDetails = ({competition}) =>{
                             
 
 
+
+
+
+
+
                             {/* Delete THE COMPETITON */}
                             <form onSubmit={handleSubmit}>    
                                 <button className='botonFORM' disabled = { isLoading}  >
