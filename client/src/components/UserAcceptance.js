@@ -61,11 +61,6 @@ const UserAcceptance = ({user}) =>{
                             </form>
                             <div style={{width:'20px'}}></div>
                             
-                            <Link to={`/admin/verdocumentos/${user._id}`}>
-                                <button className='botonFORM'>
-                                    <RiInformationLine color='#02174A' size='25px'/>
-                                </button>
-                            </Link>
 
                         </div>
                     
