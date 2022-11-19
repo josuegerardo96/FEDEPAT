@@ -107,6 +107,8 @@ const SignupCompetition = () => {
                             <option value="Semiprofesional bota alta en línea">Semiprofesional bota alta en línea</option>
                         </select>
 
+
+
                         <br></br>
                         <label htmlFor="catec" className='Compadd-normal-text'>Provincia</label>
                         <select className="Compadd-Input-competition-dropdown" name="catec" id="catec" onChange={(e) => setProvincia(e.target.value)} value={provincia}>
