@@ -72,6 +72,10 @@ const  CompetitionPage = () => {
                             <option value="Puntarenas">Puntarenas</option>
                             <option value="Guanacaste">Guanacaste</option>
                             
+
+
+
+                            
                         </select>
                         <div style={{width:'10px'}}></div>
                         <label className="PaginaCompeticion-filtros-texto">Filtrar por categoría: </label>
