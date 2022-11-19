@@ -54,14 +54,6 @@ export default function Navigation(){
                             <div  className= {paginaSel==='principal' ? 'Navbar-circulorojo' : 'Navbar-circuloblanco' }/>
                         </div>
 
-                        
-                        {/* TODO when The teams page has been built I will come back and change this */}
-                        <div className='Navbar-partederecha-opcionconcirculo' >
-                            <Nav.Link as={NavLink} to ={routes.home} onClick={() => cambiarPaginaSeleccionada('equipos')}>
-                                <label className='Navbar-partederecha-textos' style={paginaSel ==='equipos'?{fontWeight: 'bold'}:{fontWeight: 'normal'}}>Mis equipos</label>
-                            </Nav.Link> 
-                            <div  className= {paginaSel==='equipos' ? 'Navbar-circulorojo' : 'Navbar-circuloblanco' }/>
-                        </div>
 
                         {/* Edit my profile */}
                         <div className='Navbar-partederecha-opcionconcirculo' onClick={() => cambiarPaginaSeleccionada('editar')} >

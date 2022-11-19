@@ -58,9 +58,11 @@ const CompetitionPage = () => {
 
                 <div className="Paginausuarios-body">
 
-                    <div className="topnav">
-
-                        <select name="catec" id="catec" onChange={(e) => setProvincia(e.target.value)} value={provincia}>
+                    <div className="Competencias-filtros">
+                        
+                        <label className="Competencias-filtros-texto">Filtrar por provincia:</label>
+                        <div style={{width:'20px'}}></div>
+                        <select name="catec" className="Competencias-filtros-dropdown" id="catec" onChange={(e) => setProvincia(e.target.value)} value={provincia}>
                             <option value="todo">todo</option>
                             <option value="San Jose">San Jose</option>
                             <option value="Cartago">Cartago</option>
@@ -72,8 +74,11 @@ const CompetitionPage = () => {
 
 
                         </select>
+                        <div style={{width:'50px'}}></div>
 
-                        <select name="catec" id="catec" onChange={(e) => setTipo(e.target.value)} value={tipo}>
+                        <label className="Competencias-filtros-texto">Filtrar por tipo: </label>
+                        <div style={{width:'20px'}}></div>
+                        <select name="catec" id="catec" className="Competencias-filtros-dropdown" onChange={(e) => setTipo(e.target.value)} value={tipo}>
                             <option value="todo">todo</option>
                             <option value="Patín recreativo en línea o tradicional (4 ruedas)">Patín recreativo en línea o tradicional (4 ruedas)</option>
                             <option value="Semiprofesional bota alta en línea">Semiprofesional bota alta en línea</option>

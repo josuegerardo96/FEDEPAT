@@ -24,7 +24,7 @@ export const useAddPlayerComp = () => {
             setError(json.error)
         }
         if(response.ok){
-            toast.error("Registro Hecho")
+            toast.success("Registro Hecho!")
             //window.location.replace("/admin/registeradmin")  
             //window.location.replace("/")
             setIsLoading(false)

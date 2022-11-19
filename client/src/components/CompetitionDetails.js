@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useDeleteCompetiton } from "../hooks/useDeleteCompetition"
 import { useDeleteCompJugadores  } from "../hooks/UseDeleteCompJugadores"
 import {RiDeleteBinFill, RiEdit2Fill} from "react-icons/ri";
-import './UserAcceptance.css';
+import './CompetitionDetails.css';
 
 
 
@@ -30,19 +30,19 @@ const CompetitionDetails = ({competition}) =>{
 
 
 
-        <div className='Solicitudes-caja'>
+        <div className='Competiciones-caja'>
             
 
             
                    
-                        <label className='Solicitudes-caja-textonormal'><strong>Competencia.</strong><br/>{competition.nombre}</label>
-                        <label className='Solicitudes-caja-textonormal'>{competition.tipo}</label>
-                        <label className='Solicitudes-caja-textonormal'><strong>Provincia</strong><br/>{competition.provincia}</label>
-                        <label className='Solicitudes-caja-textonormal'><strong>Ubicación</strong><br/>{competition.ubicación}</label>
-                        <label className='Solicitudes-caja-textonormal'><strong>Fecha Inicio</strong><br/>{date}</label>
+                        <label className='Competiciones-caja-textonormal'><strong>Competencia.</strong><br/>{competition.nombre}</label>
+                        <label className='Competiciones-caja-textonormal'>{competition.tipo}</label>
+                        <label className='Competiciones-caja-textonormal'><strong>Provincia</strong><br/>{competition.provincia}</label>
+                        <label className='Competiciones-caja-textonormal'><strong>Ubicación</strong><br/>{competition.ubicación}</label>
+                        <label className='Competiciones-caja-textonormal'><strong>Fecha Inicio</strong><br/>{date}</label>
                 
 
-                        <div className='Solicitudes-caja-rol-icon'>
+                        <div className='Competiciones-caja-rol-icon'>
                             
 
 

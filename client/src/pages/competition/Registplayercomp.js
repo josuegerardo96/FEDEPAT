@@ -7,6 +7,7 @@ import { IoArrowBackCircle } from "react-icons/io5"
 import fedepat from '../../images/Fedepat_bg.png';
 import { useParams } from "react-router-dom"
 import './navbar.css'
+import './Registplayercomp.css'
 
 const Registplayercomp = () => {
     const [players, setPlayer] = useState(null)
@@ -33,10 +34,6 @@ const Registplayercomp = () => {
     }, [user.user._id])
 
 
-    const filter = () => {
-        console.log(filtro)
-    }
-
     return (
         <>
 
@@ -50,7 +47,7 @@ const Registplayercomp = () => {
                         <Link to={routes.verallcompetencias} style={{ textDecoration: 'none' }} >
                             <IoArrowBackCircle size='35px' color='#02174A' />
                         </Link>
-                        <label className="Paginasolicitudes-header-volvertexto">Competencias</label>
+                        <label className="Paginasolicitudes-header-volvertexto">Registrar jugador en competencia</label>
                     </div>
 
 
@@ -64,13 +61,11 @@ const Registplayercomp = () => {
                 {/* THIS IS THE SCREENS BODY */}
                 <div className="Paginasolicitudes-body">
 
-                    <div className="topnav">
-                        <button className="active" onClick={() => filter()}>Buscar</button>
-                        <input type="text"
-                            onChange={(e) => setFiltro(e.target.value)}
-                            value={filtro}
-                        />
-                        <select name="catec" id="catec" onChange={(e) => setCategoria(e.target.value)} value={categoria}>
+                    <div className="registrarJugador-filtros">
+                        
+                        <label className="registrarJugador-filtros-texto">Filtrar por género: </label>
+                        <div style={{width:'20px'}}></div>
+                        <select name="catec" id="catec" className="registrarJugador-filtros-dropdown" onChange={(e) => setCategoria(e.target.value)} value={categoria}>
                             <option value="Mujer">Mujer</option>
                             <option value="Hombre">Hombre</option>
                             

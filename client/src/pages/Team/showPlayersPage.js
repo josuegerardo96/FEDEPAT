@@ -6,7 +6,7 @@ import routes from '../../helpers/routes';
 import { IoArrowBackCircle } from "react-icons/io5"
 import fedepat from '../../images/Fedepat_bg.png';
 import './navbar.css'
-
+import './showPlayersPage.css'
 
 const PlayersPage = () => {
     const [players, setPlayer] = useState(null)
@@ -31,10 +31,6 @@ const PlayersPage = () => {
     }, [user.user._id])
 
     return (
-
-
-
-
         <>
             <div className="Paginasolicitudes">
 
@@ -59,10 +55,11 @@ const PlayersPage = () => {
                 <div className="Paginasolicitudes-body">
 
 
-                    <div className="topnav">
+                    <div className="Players-filtros">
 
-
-                        <select name="catec" id="catec" onChange={(e) => setGenero(e.target.value)} value={genero}>
+                        <label className="Players-filtros-texto">Filtrar: </label>
+                        <div style={{width:'20px'}}></div>
+                        <select name="catec" id="catec" className="Players-filtros-dropdown" onChange={(e) => setGenero(e.target.value)} value={genero}>
                             <option value="todo">todo</option>
                             <option value={true}  >Hombre</option>
                             <option value={false}>Mujer</option>

@@ -55,9 +55,14 @@ const PlayerDetailsRegis = ({ player, compid }) => {
             }
         }
 
+        
 
-        //
 
+    }
+
+
+    const erroryaRegistrado = () => {
+        toast.error("El jugador ya fue registrado previamente")
     }
 
 
@@ -99,7 +104,7 @@ const PlayerDetailsRegis = ({ player, compid }) => {
                 <form onSubmit={handleSubmit}>
                     <button className='botonFORM' disabled={isLoading}  >
                         {!error && <div> Registrar </div>}
-                        {error && <div className="error"> El jugador ya fue registrado anteriormente </div>}
+                        {error && <div className="error"> {erroryaRegistrado()} </div>}
                     </button>
                 </form>
 

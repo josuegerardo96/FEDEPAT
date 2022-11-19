@@ -308,7 +308,7 @@ export default function HomePage(){
                                     <div className='P-C-L-cuadro'>
                                             <IoMdCreate size='20px' color='#367E18'/>
                                             <div className='P-C-L-C-texto'>
-                                                <label className='P-C-L-C-textoprincipal'>Crear evento</label>
+                                                <label className='P-C-L-C-textoprincipal'>Crear competencia</label>
                                                 <label className='P-C-L-C-textosecundario'>Cree eventos deportivos a los cuales los usuarios se podrán registrar</label>
                                             </div>
                                             <RiArrowRightSLine size='20px' color='#02174A'/>

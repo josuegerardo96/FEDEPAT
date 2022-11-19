@@ -1,0 +1,30 @@
+.registrarJugador-filtros{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.registrarJugador-filtros-texto{
+    color: #02174A;
+    font-size: small;
+
+}
+
+
+.registrarJugador-filtros-dropdown{
+    border-style: solid;
+    border-radius: 6px;
+    border-width: 2px;
+    border-color: #B4B6BA;
+    width: 20%;    
+    height: 40px;
+    padding-left:10px;
+    padding-right: 10px;
+    border-right: -30px;
+    /* Text apart */
+    color: #02174A;
+    font-family: 'Roboto', sans-serif;
+}

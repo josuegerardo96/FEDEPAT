@@ -4,9 +4,10 @@ import { Nav } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom';
 import routes from '../../helpers/routes'
 import './RegisterAdmin.css';
+import './CrearCompeticion.css';
 import new_admin from '../../images/new_admin.png';
+import new_competencia from '../../images/registrar_competencia.png';
 import { IoArrowBackCircle } from "react-icons/io5"
-
 import { Snackbar } from '@mui/material';
 
 
@@ -54,21 +55,21 @@ const SignupCompetition = () => {
         <>
 
 
-            <form onSubmit={handleSubmit} className='Adminadd'>
+            <form onSubmit={handleSubmit} className='Compadd'>
 
                 {/* Page title */}
-                <h3 className="Adminadd-Title">Registrar una Competencia </h3>
+                <h3 className="Compadd-Title">Registrar una Competencia </h3>
 
 
                 {/* Put the elements next to other */}
 
-                <div className="Adminadd-Line-Inputs">
+                <div className="Compadd-Line-Inputs">
 
                     {/* competition's name */}
-                    <div className="Adminadd-Line-Inputs-Blocks">
-                        <label className="Adminadd-Sub-Title">Nombre</label>
+                    <div className="Compadd-Line-Inputs-Blocks">
+                        <label className="Compadd-Sub-Title">Nombre</label>
                         <input
-                            className="Adminadd-Input-Personal-Data"
+                            className="Compadd-Input-Personal-Data"
                             type="text"
                             placeholder="Escriba el nombre de la competencia"
                             onChange={(e) => setNombre(e.target.value)}
@@ -79,9 +80,9 @@ const SignupCompetition = () => {
 
 
                 {/* Put the elements next to each other */}
-                <div className="Adminadd-Line-Inputs">
+                <div className="Compadd-Line-Inputs">
 
-                    <div className="Adminadd-Line-Inputs-Blocks">
+                    <div className="Compadd-Line-Inputs-Blocks">
 
                         {/*
                         <label htmlFor="catec">Seleccione una categoria: </label>
@@ -100,15 +101,15 @@ const SignupCompetition = () => {
                         </select>
                         */}
 
-                        <label htmlFor="catec">Seleccione una Tipo del Torneo: </label>
-                        <select name="catec" id="catec" onChange={(e) => setTipo(e.target.value)} value={tipo}>
+                        <label htmlFor="catec" className='Compadd-normal-text'>Seleccione una Tipo del Torneo</label>
+                        <select className="Compadd-Input-competition-dropdown" name="catec" id="catec" onChange={(e) => setTipo(e.target.value)} value={tipo}>
                             <option value="Patín recreativo en línea o tradicional (4 ruedas)">Patín recreativo en línea o tradicional (4 ruedas)</option>
                             <option value="Semiprofesional bota alta en línea">Semiprofesional bota alta en línea</option>
                         </select>
 
                         <br></br>
-                        <label htmlFor="catec">Provincia: </label>
-                        <select name="catec" id="catec" onChange={(e) => setProvincia(e.target.value)} value={provincia}>
+                        <label htmlFor="catec" className='Compadd-normal-text'>Provincia</label>
+                        <select className="Compadd-Input-competition-dropdown" name="catec" id="catec" onChange={(e) => setProvincia(e.target.value)} value={provincia}>
                             <option value="San Jose">San Jose</option>
                             <option value="Cartago">Cartago</option>
                             <option value="Heredia">Heredia</option>
@@ -119,21 +120,21 @@ const SignupCompetition = () => {
                         </select>
 
                     {/* competition's name */}
-                    <div className="Adminadd-Line-Inputs-Blocks">
-                        <label className="Adminadd-Sub-Title">Ubicación</label>
+                    <div className="Compadd-Line-Inputs-Blocks">
+                        <label className="Compadd-Sub-Title">Ubicación</label>
                         <input
-                            className="Adminadd-Input-Personal-Data"
+                            className="Compadd-Input-Personal-Data"
                             type="text"
-                            placeholder="Escriba el nombre de la competencia"
+                            placeholder="Escriba una ubicación más detallada"
                             onChange={(e) => setUbicación(e.target.value)}
                             value={ubicación}
                         />
                     </div>
                 
-                    <div className="Adminadd-Line-Inputs-Blocks">
-                        <label className="Adminadd-Sub-Title">Fecha de inico</label>
+                    <div className="Compadd-Date">
+                        <label className="Compadd-normal-text">Fecha de inicio</label>
                         <input
-                            className="Adminadd-Input-Personal-Data-Birthday"
+                            className="Compadd-Input-Personal-Data-Birthday"
                             type="date"
                             onChange={(e) => setFecha(e.target.value)}
                             value={fecha !== '' ? fecha : date }
@@ -148,7 +149,7 @@ const SignupCompetition = () => {
 
                 {/* competencia tipo*/}
 
-                <div className="Adminadd-Line-Inputs-Blocks">
+                <div className="Compadd-Line-Inputs-Blocks">
 
                 </div>
 
@@ -157,16 +158,16 @@ const SignupCompetition = () => {
                 <button
                     onClick={handleClickEvent}
                     disabled={isLoading}
-                    className="Adminadd-Button-Signup">
+                    className="Compadd-Button-Signup">
                     Registrar Competencia
                 </button>
                 {error && <div className="error" >{error}</div>}
 
 
                 <Nav.Link as={NavLink} to={routes.home}>
-                    <div className="Adminadd-icono-volver">
+                    <div className="Compadd-icono-volver">
                         <IoArrowBackCircle size='25px' color='#4876A6' />
-                        <label className="Adminadd-texto-volver">Volver a la pagina principal</label>
+                        <label className="Compadd-texto-volver">Volver a la pagina principal</label>
                     </div>
                 </Nav.Link>
 
@@ -177,7 +178,6 @@ const SignupCompetition = () => {
                     autoHideDuration={5000}
                     message="Competencia  agregada"
                     onClose={handleToClose}
-
                 />
 
 
@@ -186,8 +186,8 @@ const SignupCompetition = () => {
 
 
             {/* First right-half of the screen with an image for editing */}
-            <div className="Registeradmin-Right">
-                <img className="Main-Img" src={new_admin} alt="Imagen de admin" />
+            <div className="Registercomp-Right">
+                <img className="Main-Comp-Img" src={new_competencia} alt="Imagen de admin" />
             </div>
 
 

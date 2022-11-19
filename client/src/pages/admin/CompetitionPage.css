@@ -1,6 +1,6 @@
 
 /* This is the full screen */
-.Paginausuarios{
+.PaginaCompeticion{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,7 +13,7 @@
 
 
 /* ============================================================== THIS IS THE SCREENS HEADER ======================================================== */
-.Paginausuarios-header{
+.PaginaCompeticion-header{
     background-color: white;
     display: flex;
     align-items: center;
@@ -27,7 +27,7 @@
 /* ================ This is the left side of the header ================== */
 
 
-.Paginausuarios-header-volver{
+.PaginaCompeticion-header-volver{
     margin-left: 50px;
     justify-content: center;
     display: block;
@@ -35,7 +35,7 @@
 
 
 
-.Paginausuarios-header-volvertexto{
+.PaginaCompeticion-header-volvertexto{
     color: #02174A;
     font-weight: bold;
     font-size: 20px;
@@ -50,18 +50,18 @@
 
 /* ================ This is right side of the header ====================== */
 
-.Paginausuarios-header-FEDEPAT{
+.PaginaCompeticion-header-FEDEPAT{
     margin-right: 60px;
 }
 
 
 
-.Paginausuarios-header-logo{
+.PaginaCompeticion-header-logo{
     height: 100px;
 }
 
 
-.Paginausuarios-header-texto-FEDEPAT{
+.PaginaCompeticion-header-texto-FEDEPAT{
     margin-left: 15px;
     vertical-align: middle;
     font-size: 14px;
@@ -77,7 +77,7 @@
 
 
 
-.Paginausuarios-body{
+.PaginaCompeticion-body{
     overflow-y: auto;
     margin-top: 40px;
     width: 95%;
@@ -111,16 +111,9 @@
 
 
 
+/* ================================================ FILTERS ====================================================== */
 
-
-
-
-
-
-
-
-
-.Competencias-filtros{
+.PaginaCompeticion-filtros{
     display: flex;
     width: 100%;
     justify-content: center;
@@ -129,14 +122,14 @@
     
 }
 
-.Competencias-filtros-texto{
+.PaginaCompeticion-filtros-texto{
     color: #02174A;
     font-size: small;
 
 }
 
 
-.Competencias-filtros-dropdown{
+.PaginaCompeticion-filtros-dropdown{
     border-style: solid;
     border-radius: 6px;
     border-width: 2px;
@@ -150,3 +143,10 @@
     color: #02174A;
     font-family: 'Roboto', sans-serif;
 }
+
+
+
+
+
+
+
