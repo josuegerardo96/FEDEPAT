@@ -19,8 +19,6 @@ const UserDetails = ({user}) =>{
         <div>
             {auth.user.email !== user.email && user.estado && (
 
-
-
                 <form onSubmit={handleSubmit}>   
                     <div className='Usuario-caja'>
 
