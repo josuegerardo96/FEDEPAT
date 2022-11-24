@@ -1,6 +1,5 @@
 # Sistema de inscripción para la FEDEPAT 🏅
 
-### Grupo Los Optimistas
 
 ### De que trata 🗒️
 
@@ -10,9 +9,9 @@ en un sólo lugar toda la información de los usuarios esto con el fin de hacer 
 
 ### Tecnologías 💻
 
-- __REACT JS:___ Utilizado para el desarrollo frontend de la aplicación, para el momento del proyecto se usa la última versión (18.1).
+- __REACT JS:___ Utilizado para el desarrollo frontend de la aplicación.
 - __Express JS:__ Utilizado cómo sistema de enrutamientos.
-- __MongoDB:__ Utilizado cómo base de datos, se centra la biblioteca _mongoose_ para facilitar su conexión con REACT JS.
+- __MongoDB:__ Utilizado cómo base de datos, se centra en la biblioteca _mongoose_ para facilitar su conexión con REACT JS.
 - __Node JS:__ Utilizado para el desarrollo backend debido a su compatibilidad con las tecnologías anteriores.
 
 ### Objetivo general ✏️
